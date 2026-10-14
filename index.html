@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cours pratique : comprendre l'IA, installer OpenCode, trouver des modèles gratuits et payants, créer des agents, skills, plugins et serveurs MCP." />
+  <title>Cours IA &amp; OpenCode — de zéro à ton assistant de code</title>
+  <!-- Typographie : Arial (police système) — aucune dependance reseau -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A4%96</text></svg>" />
+</head>
+<body>
+
+<div class="app">
+  <div class="bg-fx" aria-hidden="true"></div>
+
+  <!-- ============================== BARRE HAUTE ======================= -->
+  <header class="topbar">
+    <button class="icon-btn menu-btn" id="menuBtn" aria-label="Ouvrir le sommaire">&#9776;</button>
+    <a class="brand" href="#accueil" id="brandLink" aria-label="Accueil du cours">
+      <span class="brand-mark" aria-hidden="true">&infin;</span>
+      <span class="brand-text">
+        <strong>Cours IA &amp; OpenCode</strong>
+        <span>de z&eacute;ro &rarr; ton assistant de code</span>
+      </span>
+    </a>
+    <nav class="crumb" id="crumb" aria-label="Fil d'ariane">Toutes les th&eacute;matiques</nav>
+    <div class="topbar-progress" id="topbarProgress" title="Chapitres d&eacute;j&agrave; vus">
+      <span class="tp-label">Progression</span>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <span class="tp-count" id="progressText">0/20</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="Changer de th&egrave;me"></button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div class="layout">
+
+    <!-- ============================== SOMMAIRE ======================== -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-scroll">
+        <div class="side-label">Sommaire</div>
+        <input id="navSearch" class="nav-search" type="search" placeholder="Rechercher un chapitre&hellip;" aria-label="Rechercher un chapitre" />
+        <nav id="nav" class="nav" aria-label="Sommaire du cours"></nav>
+      </div>
+      <div class="sidebar-foot">
+        <div class="side-hint">Raccourcis <kbd>[</kbd> <kbd>]</kbd> &middot; <kbd>&Eacute;chap</kbd></div>
+      </div>
+    </aside>
+
+    <!-- ============================== CONTENU ========================= -->
+    <main class="content" id="content">
+
+      <!-- ========================= ACCUEIL / THÉMATIQUES ============== -->
+      <section class="view view-home" id="accueil">
+        <header class="hero">
+          <p class="kicker">Parcours pratique &middot; &Eacute;dition 2026</p>
+          <h1 class="hero-title">De z&eacute;ro &agrave; ton <em>assistant de code</em></h1>
+          <p class="hero-lead">
+            Un parcours 100&nbsp;% pratique&nbsp;: comprendre l'IA, installer
+            <strong>OpenCode</strong>, trouver des mod&egrave;les gratuits ou payants,
+            cr&eacute;er des agents, des skills, des plugins et des serveurs MCP.
+            &Agrave; la fin, tu repars avec un assistant de code configur&eacute; par toi.
+          </p>
+          <ul class="hero-stats">
+            <li><strong>20</strong><span>th&eacute;matiques</span></li>
+            <li><strong>6</strong><span>modules</span></li>
+            <li><strong>88</strong><span>exemples&nbsp;de&nbsp;code</span></li>
+          </ul>
+        </header>
+
+        <div class="filters" id="filters" role="group" aria-label="Filtrer les th&eacute;matiques par module"></div>
+
+        <div class="tiles-head">
+          <h2 class="tiles-title">Catalogue des th&eacute;matiques</h2>
+          <span class="tiles-count" id="tilesCount">20 th&eacute;matiques</span>
+        </div>
+        <div class="tiles" id="tiles"></div>
+      </section>
+
+      <!-- ============================== LECTEUR ======================== -->
+      <div class="reader is-hidden" id="pages">
+        <a class="back-home" id="backHome" href="#accueil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Toutes les th&eacute;matiques
+        </a>
+
+<!-- ================================================================ -->
+<!-- 01 · COMPRENDRE L'IA                                             -->
+<!-- ================================================================ -->
+<section class="page" id="decouvrir-ia" data-module="Module 1 &middot; D&eacute;couvrir"
+         data-num="01" data-title="Comprendre l'IA sans jargon">
+  <span class="kicker">Module 1 &middot; D&eacute;couvrir</span>
+  <h1>Comprendre l'IA sans jargon</h1>
+  <p class="lead">Avant d'installer quoi que ce soit, on pose les bases. En 10 minutes, tu vas
+  comprendre ce qu'est r&eacute;ellement une &laquo;&nbsp;IA&nbsp;&raquo; aujourd'hui, pourquoi elle se trompe parfois,
+  et surtout &agrave; quoi elle sert concr&egrave;tement &agrave; un d&eacute;veloppeur.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif de ce chapitre</div>
+    <p>Comprendre ce qu'est un mod&egrave;le de langage, ce qu'il sait faire, ce qu'il ne sait
+    <strong>pas</strong> faire, et pourquoi c'est l'outil le plus utile du d&eacute;veloppeur depuis l'arriv&eacute;e
+    des IDE modernes. Aucun pr&eacute;requis&nbsp;: aucun code &agrave; &eacute;crire ici.</p>
+  </div>
+
+  <h2>Qu'est-ce qu'une IA, vraiment&nbsp;?</h2>
+  <p>Aujourd'hui, quand on dit &laquo;&nbsp;IA&nbsp;&raquo; dans le monde du d&eacute;veloppement, on parle presque
+  toujours d'un <strong>grand mod&egrave;le de langage</strong> (en anglais <em>Large Language Model</em>, ou
+  <strong>LLM</strong>). Ce n'est ni un robot, ni un programme qui &laquo;&nbsp;sait&nbsp;&raquo; les choses comme
+  un manuel. C'est un programme entra&icirc;n&eacute; sur d'&eacute;normes quantit&eacute;s de texte, qui a appris &agrave;
+  <strong>deviner le mot suivant</strong>.</p>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#129504;</span>L'analogie du clavier de t&eacute;l&eacute;phone</div>
+    <p>Quand tu &eacute;cris un SMS, ton t&eacute;l&eacute;phone te propose le mot suivant&nbsp;: &laquo;&nbsp;rendez-vous&nbsp;&raquo;
+    apr&egrave;s &laquo;&nbsp;prendre&nbsp;&raquo;. Il a appris &ccedil;a en observant des millions de messages.
+    Un LLM fait exactement la m&ecirc;me chose, mais en beaucoup plus fort&nbsp;: il propose le mot suivant
+    d'un texte, et recommence, des centaines de fois, jusqu'&agrave; produire une r&eacute;ponse compl&egrave;te.</p>
+    <p style="margin-bottom:0">C'est pour &ccedil;a qu'on parle de <strong>pr&eacute;diction</strong> et non de
+    &laquo;&nbsp;r&eacute;flexion&nbsp;&raquo;. Le mod&egrave;le ne cherche pas une v&eacute;rit&eacute; dans une base&nbsp;: il g&eacute;n&egrave;re
+    une suite de mots qui a statistiquement du sens.</p>
+  </div>
+
+  <h2>Pourquoi &ccedil;a se trompe parfois&nbsp;? (les hallucinations)</h2>
+  <p>Comme le mod&egrave;le <em>invente</em> la suite la plus probable, il peut inventer une information
+  fausse avec beaucoup d'assurance&nbsp;: une fonction qui n'existe pas, une URL erron&eacute;e, une
+  biblioth&egrave;que obsol&egrave;te. On appelle &ccedil;a une <strong>hallucination</strong>.</p>
+  <p>Ce n'est pas un bug, c'est une cons&eacute;quence directe de son fonctionnement. La bonne r&eacute;action
+  n'est pas de &laquo;&nbsp;fuir l'IA&nbsp;&raquo;, mais d'adopter trois r&eacute;flexes&nbsp;:</p>
+  <ul>
+    <li><strong>V&eacute;rifier</strong> ce qui compte vraiment (code ex&eacute;cut&eacute;, faits, commandes).</li>
+    <li><strong>Donner du contexte</strong> (le bon fichier, la bonne doc, la bonne version).</li>
+    <li><strong>Faire faire &agrave; l'IA ce qu'elle fait bien</strong>&nbsp;: transformer, r&eacute;sumer, expliquer, proposer.</li>
+  </ul>
+
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>&Agrave; retenir tout de suite</div>
+    <p style="margin:0">Un LLM est un <strong>assistant</strong>, pas un oracle. Il acc&eacute;l&egrave;re
+    &eacute;norm&eacute;ment le travail, mais la responsabilit&eacute; de ce qui part en production reste la tienne.</p>
+  </div>
+
+  <h2>Ce que l'IA fait tr&egrave;s bien (et ce qu'elle fait mal)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Elle excelle &agrave;&hellip;</th><th>Elle est fragile sur&hellip;</th></tr></thead>
+      <tbody>
+        <tr><td>Expliquer un code que tu ne connais pas</td><td>Les faits pr&eacute;cis et r&eacute;cents (versions, prix, dates)</td></tr>
+        <tr><td>Transformer / refactorer / traduire du code</td><td>Les d&eacute;tails d'une API peu document&eacute;e ou tr&egrave;s r&eacute;cente</td></tr>
+        <tr><td>&Eacute;crire des tests, de la doc, des messages de commit</td><td>Les calculs longs et exacts, sans outil</td></tr>
+        <tr><td>D&eacute;bloquer sur une erreur que tu recopies</td><td>Deviner ce que tu veux si tu ne l'&eacute;cris pas</td></tr>
+        <tr><td>Proposer plusieurs pistes / architectures</td><td>Conna&icirc;tre ton projet sans que tu le lui montres</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>&Agrave; quoi &ccedil;a sert pour un d&eacute;veloppeur&nbsp;?</h2>
+  <p>Un outil comme <strong>OpenCode</strong> transforme le mod&egrave;le en <strong>assistant de code qui agit</strong>
+  dans ton projet&nbsp;: il lit tes fichiers, &eacute;crit du code, lance des commandes, corrige des erreurs.
+  Concr&egrave;tement, tu l'utilises pour&nbsp;:</p>
+  <div class="grid two">
+    <div class="mini"><h5>&#128640; Acc&eacute;l&eacute;rer</h5><p>G&eacute;n&eacute;rer du code de d&eacute;part, des tests, de la doc, des scripts d'installation.</p></div>
+    <div class="mini"><h5>&#128269; Comprendre</h5><p>Explorer un projet inconnu, poser des questions sur un fichier, r&eacute;sumer une architecture.</p></div>
+    <div class="mini"><h5>&#128736;&#65039; R&eacute;parer</h5><p>Coller une erreur, comprendre la cause, proposer et appliquer un correctif.</p></div>
+    <div class="mini"><h5>&#127891; Apprendre</h5><p>Se faire expliquer simplement une notion, avec des exemples adapt&eacute;s &agrave; ton niveau.</p></div>
+  </div>
+
+  <h2>Ce qu'on va construire ensemble</h2>
+  <p>Ce cours n'est pas une encyclop&eacute;die&nbsp;: c'est un <strong>atelier</strong>. Chaque chapitre se termine
+  par une action concr&egrave;te &agrave; r&eacute;aliser, et l'on am&eacute;liore le <strong>m&ecirc;me projet</strong> du
+  d&eacute;but &agrave; la fin&nbsp;: un <strong>assistant de code personnalis&eacute;</strong>, configur&eacute; avec des
+  mod&egrave;les gratuits, ses propres agents, skills, commandes et serveurs MCP.</p>
+
+  <div class="diagram">   Nous  ──▶  OpenCode  ──▶  Provider  ──▶  Modèle (LLM)
+              │                          ▲
+              └── agents / skills /      │
+                  commandes / MCP ───────┘
+
+   Objectif final : un assistant de code qui tourne
+   sur TON projet, avec TES règles, SANS rien payer.</div>
+
+  <h2>Comment lire ce cours</h2>
+  <ul>
+    <li>Chaque chapitre commence par un <span class="badge new">Objectif</span>&nbsp;: ce que tu sauras faire apr&egrave;s.</li>
+    <li>Les encadr&eacute;s <strong>Analogie</strong> rendent une notion abstraite concr&egrave;te.</li>
+    <li>Les blocs <strong>Pratique</strong> te font <em>faire</em>&nbsp;: tu copies, tu colles, tu testes.</li>
+    <li>Les blocs <strong>&Agrave; retenir</strong> r&eacute;sument l'essentiel &agrave; garder en t&ecirc;te.</li>
+    <li>Aucun quiz&nbsp;: uniquement de la pratique. Tu apprends en construisant.</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Astuce de lecture</div>
+    <p style="margin:0">Garde un terminal ouvert &agrave; c&ocirc;t&eacute; de ce cours. D&egrave;s qu'un bloc <em>Pratique</em>
+    appara&icirc;t, ex&eacute;cute-le pour de vrai. C'est en tapant les commandes qu'on retient.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Ouvre un terminal (Ctrl+Alt+T sous la plupart des Linux, <code class="inline">Terminal</code> sur macOS).</li>
+      <li>V&eacute;rifie que tu as un gestionnaire de paquets&nbsp;: tape <code class="inline">node --version</code> puis <code class="inline">npm --version</code>.</li>
+      <li>Si <code class="inline">node</code> n'est pas reconnu, installe Node.js LTS depuis <code class="inline">nodejs.org</code>&nbsp;: on en aura besoin plus tard (mais pas tout de suite).</li>
+      <li>Note le r&eacute;sultat&nbsp;: tu sauras si tu peux utiliser les m&eacute;thodes d'installation par npm dans le chapitre&nbsp;03.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un &laquo;&nbsp;IA&nbsp;&raquo; de d&eacute;veloppeur, c'est un <strong>LLM</strong>&nbsp;: un moteur qui pr&eacute;dit du texte.</li>
+      <li>Il peut se tromper avec assurance&nbsp;: on appelle &ccedil;a une <strong>hallucination</strong>.</li>
+      <li>Il est tr&egrave;s fort pour <em>transformer et expliquer</em>, fragile sur les <em>faits pr&eacute;cis</em>.</li>
+      <li>OpenCode transforme ce moteur en <strong>assistant qui agit</strong> dans ton projet.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 02 · VOCABULAIRE                                                 -->
+<!-- ================================================================ -->
+<section class="page" id="vocabulaire" data-module="Module 1 &middot; D&eacute;couvrir"
+         data-num="02" data-title="Le vocabulaire : mod&egrave;le, provider, agent">
+  <span class="kicker">Module 1 &middot; D&eacute;couvrir</span>
+  <h1>Le vocabulaire : mod&egrave;le, provider, agent</h1>
+  <p class="lead">Six mots reviennent sans arr&ecirc;t&nbsp;: LLM, mod&egrave;le, provider, API, token, agent.
+  Si tu les confonds, tout le reste para&icirc;t compliqu&eacute;. Une fois clarifi&eacute;s, la configuration
+  d'OpenCode devient &eacute;vidente.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Distinguer clairement ces concepts et savoir <strong>quel objet vit o&ugrave;</strong>
+    (dans ta machine, chez un fournisseur, dans un fichier de config).</p>
+  </div>
+
+  <h2>1. Le LLM (le moteur)</h2>
+  <p>Le <strong>LLM</strong> est le moteur d'intelligence. Exemples&nbsp;: GPT, Claude, Gemini, Llama,
+  Qwen, Gemma, Nemotron. C'est un gros fichier de &laquo;&nbsp;poids&nbsp;&raquo; entra&icirc;n&eacute; sur du texte.
+  On ne l'&eacute;crit pas &agrave; la main&nbsp;: on l'entra&icirc;ne, ou on l'utilise tel quel.</p>
+
+  <h2>2. Le mod&egrave;le (la version pr&eacute;cise)</h2>
+  <p>Un m&ecirc;me LLM existe en plusieurs <strong>mod&egrave;les</strong>. Par exemple la famille Gemini a
+  <code class="inline">gemini-2.5-flash</code> (rapide) et <code class="inline">gemini-2.5-flash-lite</code>
+  (plus l&eacute;ger). Un mod&egrave;le = un nom pr&eacute;cis, avec sa taille, son co&ucirc;t, sa vitesse,
+  sa taille de m&eacute;moire de contexte.</p>
+
+  <h2>3. Le token (l'unit&eacute; de mesure)</h2>
+  <p>Un LLM ne lit pas des mots&nbsp;: il lit des <strong>tokens</strong>. Un token vaut grosso modo
+  &frac34; de mot en fran&ccedil;ais. &laquo;&nbsp;Bonjour le monde&nbsp;&raquo; &asymp; 4 tokens. Cette unit&eacute;
+  sert &agrave; deux choses&nbsp;: <strong>facturer</strong> (prix par million de tokens) et <strong>limiter</strong>
+  (la fen&ecirc;tre de contexte).</p>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128176;</span>Le token, c'est le &laquo;&nbsp;compteur&nbsp;&raquo;</div>
+    <p style="margin:0">Pense &agrave; un taxi&nbsp;: on paie au kilom&egrave;tre, pas &agrave; la destination. Ici, on paie
+    <strong>par token</strong>, et la &laquo;&nbsp;course&nbsp;&raquo; a deux compteurs&nbsp;: les tokens d'entr&eacute;e
+    (ce que tu envoies) et les tokens de sortie (ce que le mod&egrave;le r&eacute;pond, plus cher).</p>
+  </div>
+
+  <h2>4. La fen&ecirc;tre de contexte (la m&eacute;moire de travail)</h2>
+  <p>Un mod&egrave;le ne &laquo;&nbsp;se souvient&nbsp;&raquo; pas de la conversation pr&eacute;c&eacute;dente par magie. &Agrave; chaque
+  &eacute;change, on lui renvoie <strong>tout le texte utile</strong> (ton message + l'historique + les fichiers).
+  La quantit&eacute; maximale qu'il peut recevoir s'appelle la <strong>fen&ecirc;tre de contexte</strong>
+  (ex.&nbsp;: 200&nbsp;000 tokens).</p>
+  <div class="diagram">┌──────────────── FENÊTRE DE CONTEXTE (ex. 200 000 tokens) ────────────────┐
+│  instructions  │  historique conversation  │  fichiers fournis  │ réponse │
+└──────────────────────────────────────────────────────────────────────────┘
+   Plus le contexte est gros → plus c'est lent et cher → d'où l'utilité
+   de la "compaction" (chapitre 10) qui résume le vieux contexte.</div>
+
+  <h2>5. Le provider (le fournisseur)</h2>
+  <p>Un <strong>provider</strong> est l'entreprise (ou le logiciel) qui fait <em>tourner</em> le mod&egrave;le
+  et te le donne via une <strong>API</strong>. Tu ne poss&egrave;des pas le mod&egrave;le&nbsp;: tu loues sa
+  puissance de calcul. Exemples&nbsp;: OpenRouter, Anthropic, OpenAI, Google, Groq, Hugging&nbsp;Face,
+  et en local&nbsp;: Ollama.</p>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Provider = le robinet</div>
+    <p style="margin:0">Le <strong>mod&egrave;le</strong> est l'eau. Le <strong>provider</strong> est le robinet
+    qui te la donne, avec un <strong>prix</strong> et un <strong>d&eacute;bit</strong> (vitesse). OpenRouter va plus
+    loin&nbsp;: c'est un robinet qui donne acc&egrave;s &agrave; des centaines de mod&egrave;les au m&ecirc;me endroit.</p>
+  </div>
+
+  <h2>6. L'API (le guichet)</h2>
+  <p>Une <strong>API</strong> (<em>Application Programming Interface</em>) est la porte d'entr&eacute;e technique&nbsp;:
+  une adresse web &agrave; laquelle on envoie une requ&ecirc;te, et qui renvoie une r&eacute;ponse. Pour acc&eacute;der
+  &agrave; l'API d'un provider, on utilise une <strong>cl&eacute; API</strong> (un mot de passe secret que tu g&eacute;n&egrave;res
+  sur le site du provider).</p>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>S&eacute;curit&eacute; : ta cl&eacute; API</div>
+    <p style="margin:0">Une cl&eacute; API, c'est comme une carte bancaire. On ne la met <strong>jamais</strong>
+    dans un d&eacute;p&ocirc;t Git public, ni en clair dans un fichier partag&eacute;. OpenCode range tes cl&eacute;s
+    dans sa base locale (chapitre&nbsp;05), et pour les fichiers de config on utilise la syntaxe
+    <code class="inline">{env:NOM_DE_VARIABLE}</code>.</p>
+  </div>
+
+  <h2>7. L'agent (le chef d'orchestre)</h2>
+  <p>Un LLM seul ne fait que r&eacute;pondre du texte. Un <strong>agent</strong> est un LLM dot&eacute; d'une
+  mission, d'outils et de r&egrave;gles&nbsp;: il peut <em>d&eacute;cider</em> de lire un fichier, lancer une commande,
+  &eacute;crire du code, puis recommencer. C'est ce qui transforme un &laquo;&nbsp;chatbot&nbsp;&raquo; en
+  <strong>collaborateur qui agit</strong>.</p>
+
+  <div class="diagram">        ┌──────────────────── AGENT ────────────────────┐
+        │  rôle (system prompt) + outils + permissions  │
+        └────────────────────────┬──────────────────────┘
+                                 │  décide et appelle
+        ┌────────────────────────▼──────────────────────┐
+        │  MODÈLE (le moteur qui rédige les décisions)  │
+        └────────────────────────┬──────────────────────┘
+                                 │  utilise
+        OUTILS : lire fichier · éditer · terminal · web · MCP</div>
+
+  <h2>R&eacute;capitulatif visuel</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Mot</th><th>C'est quoi</th><th>O&ugrave; &ccedil;a vit</th></tr></thead>
+      <tbody>
+        <tr><td><strong>LLM</strong></td><td>Le moteur d'intelligence</td><td>Sur des serveurs (ou ton PC)</td></tr>
+        <tr><td><strong>Mod&egrave;le</strong></td><td>Une version pr&eacute;cise du LLM</td><td>Identifi&eacute; par un nom, ex. <code class="inline">gemini-2.5-flash</code></td></tr>
+        <tr><td><strong>Token</strong></td><td>Unit&eacute; de texte / de facturation</td><td>Concept (pas un fichier)</td></tr>
+        <tr><td><strong>Contexte</strong></td><td>M&eacute;moire de travail maximale</td><td>Propri&eacute;t&eacute; du mod&egrave;le</td></tr>
+        <tr><td><strong>Provider</strong></td><td>Le fournisseur qui h&eacute;berge le mod&egrave;le</td><td>En ligne (cloud) ou local (Ollama)</td></tr>
+        <tr><td><strong>API / cl&eacute;</strong></td><td>La porte d'entr&eacute;e + le mot de passe</td><td>Site du provider</td></tr>
+        <tr><td><strong>Agent</strong></td><td>LLM + mission + outils + r&egrave;gles</td><td>OpenCode (fichier ou config)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <p>R&eacute;&eacute;cris cette phrase en rempla&ccedil;ant chaque mot-cl&eacute; par ta propre d&eacute;finition, sans regarder&nbsp;:</p>
+    <blockquote style="border-left:3px solid var(--accent);margin:12px 0;padding:4px 14px;color:var(--text-soft)">
+      &laquo;&nbsp;Mon <b>agent</b> utilise un <b>mod&egrave;le</b> via un <b>provider</b>, qui facture au <b>token</b>
+      et limite &agrave; une <b>fen&ecirc;tre de contexte</b>.&nbsp;&raquo;
+    </blockquote>
+    <p style="margin-bottom:0">Si tu peux reformuler cette phrase &agrave; quelqu'un, tu as compris 80&nbsp;% du vocabulaire
+    de tout le cours. Note ta version&nbsp;: elle te servira de fiche m&eacute;mo.</p>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li><strong>Mod&egrave;le</strong> = le moteur &middot; <strong>Provider</strong> = le robinet.</li>
+      <li><strong>Token</strong> = l'unit&eacute; de co&ucirc;t &middot; <strong>Contexte</strong> = la m&eacute;moire de travail.</li>
+      <li><strong>API / cl&eacute;</strong> = comment on y acc&egrave;de, et il faut la prot&eacute;ger.</li>
+      <li><strong>Agent</strong> = un LLM avec une mission et des outils&nbsp;: il agit.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 03 · INSTALLER OPENCODE                                          -->
+<!-- ================================================================ -->
+<section class="page" id="installer" data-module="Module 2 &middot; Installer"
+         data-num="03" data-title="Installer OpenCode (toutes les m&eacute;thodes)">
+  <span class="kicker">Module 2 &middot; Installer</span>
+  <h1>Installer OpenCode (toutes les m&eacute;thodes)</h1>
+  <p class="lead">OpenCode est un agent de code en ligne de commande, gratuit et open source. Il existe
+  une m&eacute;thode d'installation pour chaque syst&egrave;me. On va choisir la tienne, l'installer, puis v&eacute;rifier
+  que tout fonctionne.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Avoir la commande <code class="inline">opencode</code> qui r&eacute;pond dans ton terminal,
+    quelle que soit ta machine.</p>
+  </div>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#9973;&#65039;</span>Tu es sur quoi&nbsp;?</div>
+    <p style="margin:0">Choisis ta section&nbsp;: <strong>Linux / macOS</strong> (la plus simple), ou
+    <strong>Windows</strong>. Tu peux tester ton syst&egrave;me avec <code class="inline">uname -a</code> (Linux/macOS).</p>
+  </div>
+
+  <h2>M&eacute;thode 1 &mdash; L'installeur officiel (recommand&eacute;)</h2>
+  <p>Une seule ligne, qui t&eacute;l&eacute;charge le binaire adapt&eacute; &agrave; ta machine. C'est la m&eacute;thode la plus fiable.</p>
+  <pre data-file="terminal" data-lang="bash">curl -fsSL https://opencode.ai/v2/install | bash</pre>
+  <p>Ce que fait cette commande, d&eacute;compos&eacute;&nbsp;:</p>
+  <ul>
+    <li><code class="inline">curl</code> t&eacute;l&eacute;charge un script d'installation.</li>
+    <li><code class="inline">-fsSL</code> = &eacute;chouer silencieusement, suivre les redirections, mode silencieux.</li>
+    <li><code class="inline">| bash</code> ex&eacute;cute ce script, qui place le binaire <code class="inline">opencode</code> sur ton syst&egrave;me.</li>
+  </ul>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>R&eacute;flexe de s&eacute;curit&eacute;</div>
+    <p style="margin:0">Ex&eacute;cuter un script t&eacute;l&eacute;charg&eacute; demande de la confiance. La r&egrave;gle&nbsp;:
+    t&eacute;l&eacute;charge depuis le <strong>site officiel</strong> <code class="inline">opencode.ai</code>, jamais depuis
+    un lien trouv&eacute; au hasard. Si tu pr&eacute;f&egrave;res un paquet g&eacute;r&eacute;, utilise la m&eacute;thode&nbsp;2.</p>
+  </div>
+
+  <h2>M&eacute;thode 2 &mdash; Par gestionnaire de paquets</h2>
+  <p>Utile si tu as d&eacute;j&agrave; Homebrew, npm, bun, pnpm ou yay/paru&nbsp;: la mise &agrave; jour est alors automatique.</p>
+
+  <h4>Homebrew (macOS / Linux)</h4>
+  <pre data-file="terminal" data-lang="bash">brew install anomalyco/tap/opencode-v2</pre>
+
+  <h4>npm / Node.js</h4>
+  <pre data-file="terminal" data-lang="bash">npm install -g @opencode/cli</pre>
+
+  <h4>bun</h4>
+  <pre data-file="terminal" data-lang="bash">bun install -g --trust @opencode/cli</pre>
+
+  <h4>pnpm</h4>
+  <pre data-file="terminal" data-lang="bash">pnpm add -g --allow-build=@opencode/cli @opencode/cli</pre>
+
+  <h4>yarn</h4>
+  <pre data-file="terminal" data-lang="bash">yarn global add @opencode/cli</pre>
+
+  <h4>Arch AUR (Linux &mdash; version beta)</h4>
+  <pre data-file="terminal" data-lang="bash">paru -S opencode-beta</pre>
+
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Note importante (2026)</div>
+    <p style="margin:0">Les gestionnaires de paquets <strong>Windows</strong> ne sont pas support&eacute;s par
+    OpenCode. Sur Windows, utilise la m&eacute;thode&nbsp;3 (binaire t&eacute;l&eacute;chargeable) ou installe d'abord WSL.</p>
+  </div>
+
+  <h2>M&eacute;thode 3 &mdash; Binaire autonome (Windows, ou sans gestionnaire)</h2>
+  <p>T&eacute;l&eacute;charge l'archive correspondant exactement &agrave; ton syst&egrave;me, d&eacute;compresse-la, puis place
+  le binaire dans un dossier pr&eacute;sent dans ton <code class="inline">PATH</code>.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Syst&egrave;me</th><th>Fichier &agrave; t&eacute;l&eacute;charger</th></tr></thead>
+      <tbody>
+        <tr><td>Windows x64</td><td><code class="inline">opencode-windows-x64.zip</code></td></tr>
+        <tr><td>Windows ARM64</td><td><code class="inline">opencode-windows-arm64.zip</code></td></tr>
+        <tr><td>macOS Apple silicon</td><td><code class="inline">opencode-darwin-arm64.zip</code></td></tr>
+        <tr><td>macOS Intel</td><td><code class="inline">opencode-darwin-x64.zip</code></td></tr>
+        <tr><td>Linux glibc x64</td><td><code class="inline">opencode-linux-x64.tar.gz</code></td></tr>
+        <tr><td>Linux glibc ARM64</td><td><code class="inline">opencode-linux-arm64.tar.gz</code></td></tr>
+        <tr><td>Linux musl (Alpine)</td><td><code class="inline">opencode-linux-x64-musl.tar.gz</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Les archives sont servies depuis <code class="inline">https://opencode.ai/update/api/latest/cli/&hellip;</code>.
+  Exemple sous Linux x64&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash"># Télécharger
+curl -fsSL -o opencode.tar.gz \
+  https://opencode.ai/update/api/latest/cli/opencode/opencode-linux-x64.tar.gz
+
+# Extraire
+tar -xzf opencode.tar.gz
+
+# Rendre exécutable puis déplacer dans le PATH
+chmod +x opencode
+sudo mv opencode /usr/local/bin/</pre>
+
+  <h2>M&eacute;thode 4 &mdash; Docker, Desktop et Web</h2>
+  <p>Trois autres fa&ccedil;ons d'utiliser OpenCode, sans passer par le terminal&nbsp;:</p>
+  <div class="grid three">
+    <div class="mini"><h5>&#128051; Docker</h5><p><code class="inline">ghcr.io/anomalyco/opencode:2.0.0</code> &mdash; pour ex&eacute;cuter OpenCode dans un conteneur.</p></div>
+    <div class="mini"><h5>&#128187; Desktop</h5><p>Application native (macOS, Windows, Linux). Pratique si le terminal te rebute au d&eacute;but.</p></div>
+    <div class="mini"><h5>&#127760; Web</h5><p><code class="inline">opencode pair</code> ouvre une interface web locale avec URL et mot de passe.</p></div>
+  </div>
+
+  <h2>V&eacute;rifier l'installation</h2>
+  <pre data-file="terminal" data-lang="bash">opencode --version
+# → opencode v2.x.x</pre>
+  <p>Si une version s'affiche, c'est bon. Tu verras aussi la version des outils internes&nbsp;:
+  OpenCode embarque sa propre logique, tu n'as rien d'autre &agrave; installer pour commencer.</p>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128680;</span>Erreur fr&eacute;quente : &laquo;&nbsp;command not found&nbsp;&raquo;</div>
+    <p>Elle signifie simplement que le dossier contenant <code class="inline">opencode</code> n'est pas dans
+    ton <code class="inline">PATH</code>. Deux solutions&nbsp;:</p>
+    <ul style="margin-bottom:0">
+      <li>Pour npm&nbsp;: v&eacute;rifie que <code class="inline">npm bin -g</code> (ou <code class="inline">npm prefix -g</code>) est bien dans ton PATH.</li>
+      <li>Pour le binaire&nbsp;: d&eacute;place-le dans <code class="inline">/usr/local/bin</code> (Linux/macOS) comme montr&eacute; plus haut.</li>
+    </ul>
+  </div>
+
+  <h2>D&eacute;sinstaller proprement</h2>
+  <p>Pour tout enlever, sans toucher &agrave; tes donn&eacute;es de session ni &agrave; ta configuration&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash"># 1. Prévisualiser ce qui sera supprimé
+opencode uninstall --dry-run
+
+# 2. Confirmer la suppression
+opencode uninstall</pre>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Bon &agrave; savoir</div>
+    <p style="margin:0">La d&eacute;sinstallation retire le <strong>cache global</strong> et arr&ecirc;te les services, mais
+    <strong>conserve</strong> tes sessions, ta configuration et tes cl&eacute;s. Tu pourras r&eacute;installer sans rien reconfigurer.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Choisis ta m&eacute;thode (m&eacute;thode&nbsp;1 pour la plupart des gens) et ex&eacute;cute la commande.</li>
+      <li>V&eacute;rifie avec <code class="inline">opencode --version</code>.</li>
+      <li>Lance <code class="inline">opencode --help</code> et note les sous-commandes que tu reconnais d&eacute;j&agrave;&nbsp;: <code class="inline">run</code>, <code class="inline">mini</code>, <code class="inline">mcp</code>, <code class="inline">auth</code>, <code class="inline">plugin</code>, <code class="inline">service</code>.</li>
+      <li>En cas de blocage, relis l'encadr&eacute; &laquo;&nbsp;command not found&nbsp;&raquo; ci-dessus.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>La m&eacute;thode la plus simple&nbsp;: <code class="inline">curl -fsSL https://opencode.ai/v2/install | bash</code>.</li>
+      <li>Sinon&nbsp;: gestionnaire de paquets, ou binaire t&eacute;l&eacute;chargeable (obligatoire sur Windows natif).</li>
+      <li>On v&eacute;rifie toujours avec <code class="inline">opencode --version</code>.</li>
+      <li>La d&eacute;sinstallation ne supprime ni ta configuration ni tes sessions.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 04 · PREMIER LANCEMENT                                           -->
+<!-- ================================================================ -->
+<section class="page" id="premier-lancement" data-module="Module 2 &middot; Installer"
+         data-num="04" data-title="Premier lancement &amp; l'interface">
+  <span class="kicker">Module 2 &middot; Installer</span>
+  <h1>Premier lancement &amp; l'interface</h1>
+  <p class="lead">OpenCode se lance <em>dans un dossier de projet</em>. Il ouvre une interface plein &eacute;cran
+  (le TUI) et te laisse discuter avec l'IA. Voici tout ce qu'il faut savoir pour ne pas &ecirc;tre perdu
+  au premier lancement.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Lancer OpenCode, comprendre l'&eacute;cran, et conna&icirc;tre les 6 commandes essentielles
+    (<code class="inline">/connect</code>, <code class="inline">/models</code>, <code class="inline">/help</code>&hellip;).</p>
+  </div>
+
+  <h2>Lancer OpenCode</h2>
+  <p>Place-toi d'abord dans le dossier du projet sur lequel tu veux travailler, puis lance OpenCode&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">cd ~/mes-projets/mon-app
+opencode</pre>
+  <p>Tu peux aussi viser un dossier en une fois&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode ~/mes-projets/mon-app</pre>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128193;</span>Pourquoi le dossier compte</div>
+    <p style="margin:0">OpenCode lit les fichiers du dossier dans lequel tu le lances. Lancer OpenCode
+    dans <code class="inline">~/mon-app</code>, c'est lui dire&nbsp;: &laquo;&nbsp;voici le projet dont je te parle&nbsp;&raquo;.
+    C'est ce qui lui permet de lire et modifier le bon code.</p>
+  </div>
+
+  <h2>Les trois fa&ccedil;ons de l'utiliser</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Commande</th><th>Ce que &ccedil;a fait</th><th>Quand l'utiliser</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">opencode</code></td><td>Ouvre l'interface plein &eacute;cran (TUI)</td><td>Travailler en interactif</td></tr>
+        <tr><td><code class="inline">opencode run "&hellip;"</code></td><td>Envoie un prompt sans interface, affiche la r&eacute;ponse</td><td>Scripts, automatisation, CI</td></tr>
+        <tr><td><code class="inline">opencode mini</code></td><td>Interface minimale, plus l&eacute;g&egrave;re</td><td>Terminaux modestes ou usage rapide</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Exemple d'utilisation &laquo;&nbsp;automatis&eacute;e&nbsp;&raquo;&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run "Explique-moi ce que fait ce projet"</pre>
+
+  <h2>L'&eacute;cran du TUI, zone par zone</h2>
+  <div class="diagram">┌──────────────────────────────────────────────────────────────┐
+│  OpenCode                              (modèle + agent actifs) │
+├──────────────────────────────────────────────────────────────┤
+│                                                                │
+│   ▶ zone de conversation : tu écris, l'IA répond               │
+│                                                                │
+│                                                                │
+├──────────────────────────────────────────────────────────────┤
+│  > écris ton message…                    /commandes  @fichiers │
+└──────────────────────────────────────────────────────────────┘</div>
+  <p>Deux symboles &agrave; conna&icirc;tre d&egrave;s le d&eacute;part&nbsp;:</p>
+  <ul>
+    <li><code class="inline">/</code> ouvre la liste des <strong>commandes</strong> (ex.&nbsp;<code class="inline">/models</code>).</li>
+    <li><code class="inline">@</code> permet de <strong>r&eacute;f&eacute;rencer un fichier</strong> du projet (ex.&nbsp;<code class="inline">@src/index.js</code>).</li>
+  </ul>
+
+  <h2>Les 6 commandes &agrave; conna&icirc;tre absolument</h2>
+  <p>Dans le TUI, tape une commande commen&ccedil;ant par <code class="inline">/</code>&nbsp;:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Commande</th><th>R&ocirc;le</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">/connect</code></td><td>Connecter un provider (saisir une cl&eacute; API, se connecter en OAuth)</td></tr>
+        <tr><td><code class="inline">/models</code></td><td>Choisir le mod&egrave;le utilis&eacute; par la session</td></tr>
+        <tr><td><code class="inline">/help</code></td><td>Afficher l'aide et les raccourcis</td></tr>
+        <tr><td><code class="inline">/mcps</code></td><td>Voir et authentifier les serveurs MCP connect&eacute;s (chapitre&nbsp;17)</td></tr>
+        <tr><td><code class="inline">/init</code></td><td>G&eacute;n&eacute;rer un fichier de contexte <code class="inline">AGENTS.md</code> d&eacute;crivant ton projet</td></tr>
+        <tr><td><code class="inline">/exit</code></td><td>Quitter proprement</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Premier vrai pas : connecter un provider</h3>
+  <p>Sans provider connect&eacute;, OpenCode n'a aucun mod&egrave;le &agrave; utiliser. Au premier lancement, tape&nbsp;:</p>
+  <pre data-file="dans OpenCode" data-lang="text">/connect</pre>
+  <p>Une liste de providers appara&icirc;t. Choisis-en un, suis les &eacute;tapes (coller une cl&eacute; API ou te connecter
+  en OAuth), puis v&eacute;rifie avec&nbsp;:</p>
+  <pre data-file="dans OpenCode" data-lang="text">/models</pre>
+  <p>Tu dois voir des mod&egrave;les. On d&eacute;taille les providers et les mod&egrave;les gratuits au prochain module.</p>
+
+  <h2>Le service en arri&egrave;re-plan</h2>
+  <p>OpenCode fonctionne en client/serveur&nbsp;: l'interface discute avec un <strong>service</strong> qui g&egrave;re
+  les sessions, la config et les outils. En g&eacute;n&eacute;ral on ne s'en occupe pas&hellip; sauf s'il faut le red&eacute;marrer&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode service status     # Voir l'état
+opencode service restart    # Redémarrer le service
+opencode api get /api/info  # Vérifier que l'API répond</pre>
+
+  <h2>Questions fr&eacute;quentes du premier lancement</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Question</th><th>R&eacute;ponse courte</th></tr></thead>
+      <tbody>
+        <tr><td>&laquo;&nbsp;Je dois laisser OpenCode tourner en fond&nbsp;?&nbsp;&raquo;</td><td>Oui, un service partag&eacute; tourne pour ton compte. Tu peux l'arr&ecirc;ter avec <code class="inline">opencode service set disabled true</code>.</td></tr>
+        <tr><td>&laquo;&nbsp;O&ugrave; sont mes sessions / cl&eacute;s&nbsp;?&nbsp;&raquo;</td><td>Dans une base locale. Affiche le chemin avec <code class="inline">opencode debug paths db</code>.</td></tr>
+        <tr><td>&laquo;&nbsp;Puis-je tester sans payer&nbsp;?&nbsp;&raquo;</td><td>Oui, plusieurs providers offrent des mod&egrave;les gratuits. Chapitre&nbsp;06.</td></tr>
+        <tr><td>&laquo;&nbsp;Mon terminal affiche mal les couleurs&nbsp;?&nbsp;&raquo;</td><td>Essaie Ghostty, WezTerm, Alacritty, Kitty &mdash; ils g&egrave;rent le truecolor.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cr&eacute;e un dossier de test&nbsp;: <code class="inline">mkdir -p ~/labo-ia &amp;&amp; cd ~/labo-ia</code>.</li>
+      <li>Lance <code class="inline">opencode</code>.</li>
+      <li>Tape <code class="inline">/help</code> et explore les raccourcis affich&eacute;s.</li>
+      <li>Tape <code class="inline">/init</code> pour g&eacute;n&eacute;rer un premier <code class="inline">AGENTS.md</code> (on y reviendra au chapitre&nbsp;18).</li>
+      <li>Quitte avec <code class="inline">/exit</code>, puis relance&nbsp;: tu retrouves l'historique de ta session.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>On lance OpenCode <strong>dans le dossier du projet</strong>&nbsp;: <code class="inline">opencode</code>.</li>
+      <li>Trois modes&nbsp;: <code class="inline">opencode</code> (TUI), <code class="inline">run</code> (script), <code class="inline">mini</code> (l&eacute;ger).</li>
+      <li><code class="inline">/connect</code> puis <code class="inline">/models</code> = les deux premi&egrave;res commandes &agrave; faire.</li>
+      <li>Un service tourne en arri&egrave;re-plan&nbsp;: on le g&egrave;re avec <code class="inline">opencode service</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 05 · QU'EST-CE QU'UN PROVIDER                                    -->
+<!-- ================================================================ -->
+<section class="page" id="provider" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="05" data-title="Qu'est-ce qu'un provider ?">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>Qu'est-ce qu'un provider&nbsp;?</h1>
+  <p class="lead">Un provider, c'est le fournisseur qui met un mod&egrave;le &agrave; ta disposition via Internet.
+  Tu en relies un &agrave; OpenCode avec <code class="inline">/connect</code>, et c'est parti. Mais comprendre
+  ce qui se passe derri&egrave;re te fera &eacute;conomiser beaucoup de temps et d'argent.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Savoir connecter un provider, o&ugrave; sont stock&eacute;es tes cl&eacute;s, et comment brancher
+    un fournisseur sur mesure.</p>
+  </div>
+
+  <h2>Provider, mod&egrave;le, API : qui fait quoi</h2>
+  <div class="diagram">  TON ORDINATEUR                  INTERNET                     SERVEURS
+  ───────────────                 ────────                     ────────
+  ┌──────────┐   requête API   ┌──────────────┐   exécution   ┌──────────────┐
+  │ OpenCode │ ──────────────▶ │  PROVIDER    │ ────────────▶ │  MODÈLE      │
+  │          │ ◀────────────── │ (OpenRouter, │ ◀──────────── │  (le LLM)    │
+  └──────────┘   réponse       │  Google…)    │   tokens      └──────────────┘
+     clé API ────────────────▶ │              │
+                               └──────────────┘
+  Le provider facture au token et limite le débit (requêtes/minute, requêtes/jour).</div>
+
+  <h2>La liste officielle des providers</h2>
+  <p>OpenCode s'appuie sur le catalogue <strong>models.dev</strong>, qui recense les providers et leurs mod&egrave;les.
+  Les principaux&nbsp;:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Provider</th><th>Type</th><th>Ce qu'il apporte</th></tr></thead>
+      <tbody>
+        <tr><td><strong>OpenRouter</strong></td><td><span class="badge free">Gratuit + payant</span></td><td>Un seul compte pour des centaines de mod&egrave;les, dont des mod&egrave;les gratuits</td></tr>
+        <tr><td><strong>Hugging Face</strong></td><td><span class="badge free">Gratuit</span> + payant</td><td>Des milliers de mod&egrave;les open source via &laquo;&nbsp;Inference Providers&nbsp;&raquo;</td></tr>
+        <tr><td><strong>Groq</strong></td><td><span class="badge free">Gratuit</span></td><td>Inf&eacute;rence tr&egrave;s rapide, tier gratuit g&eacute;n&eacute;reux</td></tr>
+        <tr><td><strong>Google (AI Studio)</strong></td><td><span class="badge free">Gratuit</span> + payant</td><td>Mod&egrave;les Gemini et Gemma</td></tr>
+        <tr><td><strong>Anthropic / OpenAI</strong></td><td><span class="badge paid">Payant</span></td><td>Mod&egrave;les tr&egrave;s performants pour le code</td></tr>
+        <tr><td><strong>DeepSeek</strong></td><td><span class="badge paid">Payant</span> (tr&egrave;s abordable)</td><td>Excellent rapport qualit&eacute;/prix pour le code</td></tr>
+        <tr><td><strong>NVIDIA NIM</strong></td><td><span class="badge free">Cr&eacute;dits offerts</span></td><td>Mod&egrave;les NVIDIA Nemotron</td></tr>
+        <tr><td><strong>Ollama / LM Studio / vLLM</strong></td><td><span class="badge local">Local</span></td><td>Mod&egrave;les qui tournent sur ta machine, sans Internet</td></tr>
+        <tr><td><strong>GitHub Copilot</strong></td><td><span class="badge paid">Payant</span> (abo)</td><td>Connexion par OAuth, pas de cl&eacute; &agrave; copier</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Connecter un provider</h2>
+  <h3>M&eacute;thode graphique : /connect</h3>
+  <pre data-file="dans OpenCode" data-lang="text">/connect</pre>
+  <p>Choisis un provider, puis une m&eacute;thode&nbsp;: <strong>cl&eacute; API</strong>, <strong>OAuth</strong> (connexion
+  navigateur) ou <strong>commande</strong>. Une fois connect&eacute;, va dans <code class="inline">/models</code> pour
+  choisir un mod&egrave;le.</p>
+
+  <h3>M&eacute;thode terminal : auth login</h3>
+  <pre data-file="terminal" data-lang="bash"># Picker interactif de providers
+opencode auth login
+
+# Directement un provider, en saisie de clé API
+opencode auth login anthropic --method key
+
+# Voir les comptes connectés
+opencode auth list</pre>
+
+  <h2>O&ugrave; sont mes cl&eacute;s&nbsp;? (et pourquoi c'est s&ucirc;r)</h2>
+  <p>Les cl&eacute;s et jetons OAuth sont stock&eacute;s dans la <strong>base SQLite locale</strong> d'OpenCode,
+  pas dans un fichier texte en clair. Tu peux afficher l'emplacement&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode debug paths db
+# → ~/.local/share/opencode/opencode.db (chemin habituel)</pre>
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>Ne fais JAMAIS &ccedil;a</div>
+    <p style="margin:0">Ne copie-colle pas ta cl&eacute; API dans un fichier versionn&eacute; par Git, ni dans un
+    message public. Si tu dois l'utiliser dans un fichier de configuration, on verra au chapitre&nbsp;08
+    la forme s&eacute;curis&eacute;e&nbsp;: <code class="inline">{env:NOM_DE_VARIABLE}</code>.</p>
+  </div>
+
+  <h2>Le cas particulier des variables d'environnement</h2>
+  <p>Au lieu de saisir une cl&eacute; dans OpenCode, tu peux la fournir via une variable d'environnement.
+  Id&eacute;al pour les serveurs et l'automatisation&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash"># Pour un lancement ponctuel en mode privé
+ANTHROPIC_API_KEY=sk-ant-... opencode --standalone
+
+# Pour le service d'arrière-plan partagé
+opencode service set env ANTHROPIC_API_KEY sk-ant-...
+opencode auth list</pre>
+  <p>Ces connexions par environnement n'apparaissent pas comme des &laquo;&nbsp;comptes&nbsp;&raquo;&nbsp;: pour les
+  enlever, on <em>d&eacute;sactive la variable</em> avec <code class="inline">opencode service unset env&nbsp;&hellip;</code>.</p>
+
+  <h2>Combien de providers connecter&nbsp;?</h2>
+  <ul>
+    <li><strong>Pour d&eacute;buter</strong>&nbsp;: un seul suffit (OpenRouter, gratuit et polyvalent).</li>
+    <li><strong>Pour la r&eacute;silience</strong>&nbsp;: deux ou trois. Si l'un tombe en rate limit, on change de mod&egrave;le
+    avec <code class="inline">/models</code> (et on automatise ce basculement au chapitre&nbsp;10).</li>
+  </ul>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Lance OpenCode et tape <code class="inline">/connect</code>. Parcours la liste sans valider, juste pour voir les providers disponibles.</li>
+      <li>Cr&eacute;e un compte gratuit sur <strong>OpenRouter</strong> (voir chapitre suivant pour la cl&eacute;).</li>
+      <li>Reviens dans <code class="inline">/connect</code>, choisis OpenRouter, colle ta cl&eacute;.</li>
+      <li>V&eacute;rifie avec <code class="inline">opencode auth list</code> dans un second terminal&nbsp;: ton compte doit appara&icirc;tre.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un provider = un fournisseur de mod&egrave;les accessible par API.</li>
+      <li>On connecte avec <code class="inline">/connect</code> (TUI) ou <code class="inline">opencode auth login</code> (terminal).</li>
+      <li>Les cl&eacute;s vivent dans la base locale d'OpenCode, pas en clair &mdash; mais on ne les partage jamais.</li>
+      <li>Un ou deux providers suffisent pour commencer&nbsp;; on en ajoute pour la r&eacute;silience.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 06 · TROUVER DES MODÈLES GRATUITS                                -->
+<!-- ================================================================ -->
+<section class="page" id="modeles-gratuits" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="06" data-title="Trouver des mod&egrave;les gratuits">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>Trouver des mod&egrave;les gratuits</h1>
+  <p class="lead">On peut d&eacute;velopper avec l'IA <strong>sans rien payer</strong>. La cl&eacute;, c'est de savoir
+  o&ugrave; sont les mod&egrave;les gratuits, comment les identifier, et quelles sont leurs limites. Les listes
+  changent souvent&nbsp;: on apprend donc surtout <em>la m&eacute;thode</em> pour les trouver soi-m&ecirc;me.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Rep&eacute;rer et utiliser des mod&egrave;les gratuits (OpenRouter <code class="inline">:free</code>,
+    Hugging Face, Groq, Google AI Studio&hellip;) et conna&icirc;tre leurs limites pr&eacute;cises.</p>
+  </div>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128260;</span>Les listes bougent : la r&egrave;gle d'or</div>
+    <p style="margin:0">Un mod&egrave;le gratuit aujourd'hui peut dispara&icirc;tre demain. Ne m&eacute;morise pas les noms&nbsp;:
+    m&eacute;morise <strong>o&ugrave; regarder</strong>. Les sections ci-dessous t'apprennent &agrave; filtrer le catalogue
+    en quelques secondes.</p>
+  </div>
+
+  <h2>OpenRouter : la source n&deg;1 de mod&egrave;les gratuits</h2>
+  <p>OpenRouter agr&egrave;ge des centaines de mod&egrave;les derri&egrave;re une seule cl&eacute; API. Les mod&egrave;les gratuits
+  ont un identifiant qui finit par <code class="inline">:free</code> (ex.&nbsp;:
+  <code class="inline">google/gemma-4-31b-it:free</code>).</p>
+
+  <h3>Comment les trouver, en pratique</h3>
+  <ol class="steps">
+    <li>Va sur <code class="inline">openrouter.ai/models</code> et filtre sur les mod&egrave;les gratuits.</li>
+    <li>Ou interroge l'API directement &mdash; le plus fiable car toujours &agrave; jour&nbsp;:</li>
+  </ol>
+  <pre data-file="terminal" data-lang="bash"># Lister les modèles dont l'id se termine par ":free"
+curl -s https://openrouter.ai/api/v1/models \
+  | jq -r '.data[] | select(.id | endswith(":free")) | .id' \
+  | sort</pre>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Pas de jq ?</div>
+    <p style="margin:0">Installe-le (<code class="inline">sudo apt install jq</code> ou <code class="inline">brew install jq</code>),
+    ou ouvre simplement <code class="inline">openrouter.ai/models</code> et clique sur le filtre <strong>Free</strong>.</p>
+  </div>
+
+  <h3>Le routeur &laquo;&nbsp;gratuit automatique&nbsp;&raquo;</h3>
+  <p>OpenRouter propose un mod&egrave;le sp&eacute;cial, <code class="inline">openrouter/free</code>, qui choisit
+  <em>au hasard</em> un mod&egrave;le gratuit disponible. Id&eacute;al comme filet de s&eacute;curit&eacute;&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run --model openrouter/openrouter/free "Bonjour"</pre>
+
+  <h3>Les limites du gratuit sur OpenRouter (2026)</h3>
+  <p>C'est ici que beaucoup d&eacute;butants se font surprendre. Les mod&egrave;les <code class="inline">:free</code> sont
+  limit&eacute;s&nbsp;:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Cr&eacute;dits achet&eacute;s (au total)</th><th>Requ&ecirc;tes / minute</th><th>Requ&ecirc;tes / jour</th></tr></thead>
+      <tbody>
+        <tr><td>Moins de 10&nbsp;$</td><td>20</td><td><strong>50</strong></td></tr>
+        <tr><td>Au moins 10&nbsp;$</td><td>20</td><td><strong>1000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Traduction concr&egrave;te&nbsp;: en gratuit pur, tu disposes d'environ <strong>50 requ&ecirc;tes par jour</strong>.
+  Suffisant pour apprendre, pas pour travailler toute la journ&eacute;e. Acheter 10&nbsp;$ de cr&eacute;dits (une fois)
+  fait passer &agrave; 1000&nbsp;requ&ecirc;tes/jour &mdash; un investissement unique souvent rentable.</p>
+  <p>Pour v&eacute;rifier ton quota restant&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">curl -s https://openrouter.ai/api/v1/key \
+  -H "Authorization: Bearer $OPENROUTER_API_KEY" | jq</pre>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Erreur 429 &laquo;&nbsp;Too Many Requests&nbsp;&raquo;</div>
+    <p style="margin:0">C'est le signal du d&eacute;passement de quota. La bonne r&eacute;action&nbsp;: attendre, ou
+    basculer sur un autre mod&egrave;le/provider. On automatise ce basculement au chapitre&nbsp;10.</p>
+  </div>
+
+  <h2>Hugging Face : des milliers de mod&egrave;les open source</h2>
+  <p>Hugging&nbsp;Face h&eacute;berge des mod&egrave;les open source et propose un service d'inf&eacute;rence
+  (<em>Inference Providers</em>). Les comptes gratuits disposent d'un <strong>petit cr&eacute;dit mensuel</strong>
+  (montant variable&nbsp;; v&eacute;rifie la page <code class="inline">huggingface.co/docs/inference-providers/pricing</code>).</p>
+  <ol class="steps">
+    <li>Cr&eacute;e un compte sur <code class="inline">huggingface.co</code>.</li>
+    <li>Va dans <em>Settings &rarr; Access Tokens</em> &rarr; cr&eacute;e un token <strong>fine-grained</strong> avec
+    la permission &laquo;&nbsp;Make calls to Inference Providers&nbsp;&raquo;.</li>
+    <li>Connecte ce token dans OpenCode via <code class="inline">/connect</code> &rarr; Hugging Face.</li>
+  </ol>
+  <pre data-file="terminal" data-lang="bash"># Alternative : variable d'environnement
+export HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxx</pre>
+  <p>Dans OpenCode, l'identifiant de provider est <code class="inline">huggingface</code>&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run --model "huggingface/Qwen/Qwen3-Coder-30B-A3B-Instruct" "Explique ce code"</pre>
+
+  <h2>Groq : la vitesse, avec un tier gratuit</h2>
+  <p>Groq fait tourner des mod&egrave;les open source (Llama, Qwen, GPT-OSS) extr&ecirc;mement vite, avec un
+  <strong>tier gratuit</strong> limit&eacute; en requ&ecirc;tes par minute et par jour.</p>
+  <pre data-file="terminal" data-lang="bash">export GROQ_API_KEY=gsk_xxxxxxxxxxxx
+opencode run --model groq/llama-3.3-70b-versatile "Résume ce fichier"</pre>
+
+  <h2>Google AI Studio (Gemini / Gemma)</h2>
+  <p>Google offre un acc&egrave;s gratuit (avec quota) &agrave; ses mod&egrave;les Gemini et Gemma via <em>Google AI Studio</em>.
+  On r&eacute;cup&egrave;re une cl&eacute; sur <code class="inline">aistudio.google.com</code>.</p>
+  <pre data-file="terminal" data-lang="bash">export GEMINI_API_KEY=xxxxxxxxxxxx
+opencode run --model google/gemini-2.5-flash "Bonjour"</pre>
+
+  <h2>NVIDIA NIM &mdash; cr&eacute;dits offerts</h2>
+  <p>NVIDIA propose des cr&eacute;dits gratuits pour tester ses mod&egrave;les Nemotron via
+  <code class="inline">build.nvidia.com</code>. Pratique pour d&eacute;couvrir des mod&egrave;les de raisonnement.</p>
+
+  <h2>Le catalogue de r&eacute;f&eacute;rence : models.dev</h2>
+  <p>OpenCode tire son catalogue de <strong>models.dev</strong>. C'est l&agrave; que sont list&eacute;s les mod&egrave;les,
+  leurs prix, leurs limites de contexte et leur support des outils. En cas de doute sur un identifiant de
+  mod&egrave;le, c'est la source &agrave; v&eacute;rifier.</p>
+
+  <h2>M&eacute;mo : o&ugrave; trouver du gratuit</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Besoin</th><th>Provider</th><th>Comment commencer</th></tr></thead>
+      <tbody>
+        <tr><td>Le plus polyvalent</td><td>OpenRouter</td><td><code class="inline">/connect</code> &rarr; cl&eacute; API, mod&egrave;les <code class="inline">:free</code></td></tr>
+        <tr><td>Mod&egrave;les open source</td><td>Hugging Face</td><td><code class="inline">HF_TOKEN</code> fine-grained</td></tr>
+        <tr><td>Le plus rapide</td><td>Groq</td><td><code class="inline">GROQ_API_KEY</code></td></tr>
+        <tr><td>Gros contextes</td><td>Google AI Studio</td><td><code class="inline">GEMINI_API_KEY</code></td></tr>
+        <tr><td>Z&eacute;ro Internet</td><td>Ollama (local)</td><td>Chapitre&nbsp;09</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cr&eacute;e un compte gratuit sur <strong>openrouter.ai</strong> et g&eacute;n&egrave;re une cl&eacute; API.</li>
+      <li>Connecte-la dans OpenCode (<code class="inline">/connect</code> &rarr; OpenRouter).</li>
+      <li>Dans un terminal, liste les mod&egrave;les gratuits avec la commande <code class="inline">curl</code> du chapitre.</li>
+      <li>Choisis-en un avec <code class="inline">/models</code> et lance un vrai test&nbsp;:<br>
+      <code class="inline">opencode run --model openrouter/&lt;ton-modèle:free&gt; "Explique la différence entre let et const en JS"</code></li>
+      <li>V&eacute;rifie ton quota avec la requ&ecirc;te <code class="inline">/api/v1/key</code>.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Les mod&egrave;les gratuits OpenRouter finissent par <code class="inline">:free</code>&nbsp;: filtre-les sur le site ou via l'API.</li>
+      <li>Gratuit = limit&eacute;&nbsp;: <strong>20 req/min</strong> et <strong>50 req/jour</strong> (1000 si tu as achet&eacute; &ge;&nbsp;10&nbsp;$).</li>
+      <li>Alternatives gratuites&nbsp;: Hugging Face, Groq, Google AI Studio, NVIDIA NIM.</li>
+      <li>La r&eacute;f&eacute;rence des catalogues, c'est <strong>models.dev</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 07 · CHOISIR UN MODÈLE (PAYANT & GRATUIT)                        -->
+<!-- ================================================================ -->
+<section class="page" id="choisir-modele" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="07" data-title="Choisir son mod&egrave;le (gratuit ou payant)">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>Choisir son mod&egrave;le (gratuit ou payant)</h1>
+  <p class="lead">Il existe des centaines de mod&egrave;les. Bonne nouvelle&nbsp;: pour choisir, tu n'as besoin
+  que de <strong>cinq crit&egrave;res</strong>. Et le meilleur mod&egrave;le n'est presque jamais le plus
+  &laquo;&nbsp;intelligent&nbsp;&raquo;&nbsp;: c'est celui qui r&eacute;pond au bon besoin au bon prix.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Savoir comparer deux mod&egrave;les en 30 secondes, et d&eacute;cider gratuit ou payant selon l'usage.</p>
+  </div>
+
+  <h2>Les 5 crit&egrave;res qui comptent</h2>
+  <div class="grid two">
+    <div class="mini"><h5>1. Le contexte</h5><p>Combien de tokens il peut &laquo;&nbsp;tenir&nbsp;&raquo; en m&eacute;moire. 32k suffit pour un fichier&nbsp;; 200k+ pour un gros projet.</p></div>
+    <div class="mini"><h5>2. Les outils (tool calling)</h5><p><strong>Indispensable</strong> pour un agent&nbsp;: le mod&egrave;le doit savoir &laquo;&nbsp;appeler&nbsp;&raquo; lire/&eacute;crire/terminal. Sans &ccedil;a, pas d'action.</p></div>
+    <div class="mini"><h5>3. Le prix</h5><p>En g&eacute;n&eacute;ral exprim&eacute; en dollars par million de tokens, s&eacute;par&eacute;ment entr&eacute;e et sortie.</p></div>
+    <div class="mini"><h5>4. La qualit&eacute; sur le code</h5><p>Un mod&egrave;le excellent en r&eacute;daction peut &ecirc;tre moyen en code. Cherche un mod&egrave;le &laquo;&nbsp;coder&nbsp;&raquo;.</p></div>
+    <div class="mini"><h5>5. La vitesse (latence)</h5><p>D&eacute;bit en tokens/seconde. Crucial si tu utilises l'IA en continu.</p></div>
+    <div class="mini"><h5>Bonus : le multimodal</h5><p>Accepte-t-il des images (captures d'&eacute;cran, maquettes)&nbsp;? Utile pour le front.</p></div>
+  </div>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128663;</span>Une voiture pour chaque trajet</div>
+    <p style="margin:0">Prendre un mod&egrave;le payant pour renommer une variable, c'est comme louer un camion
+    pour acheter du pain. L'astuce des pros&nbsp;: <strong>un &laquo;&nbsp;petit&nbsp;&raquo; mod&egrave;le pas cher pour les
+    t&acirc;ches simples, un &laquo;&nbsp;gros&nbsp;&raquo; mod&egrave;le seulement quand c'est justifi&eacute;</strong>.</p>
+  </div>
+
+  <h2>Gratuit ou payant&nbsp;? La r&egrave;gle simple</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Situation</th><th>Choix conseill&eacute;</th></tr></thead>
+      <tbody>
+        <tr><td>Apprendre, tester, s'entra&icirc;ner</td><td><span class="badge free">Gratuit</span></td></tr>
+        <tr><td>Petites t&acirc;ches r&eacute;p&eacute;titives (r&eacute;sum&eacute;, formatage, commit)</td><td><span class="badge free">Gratuit</span> ou mod&egrave;le tr&egrave;s bon march&eacute;</td></tr>
+        <tr><td>Refactoring de plusieurs fichiers</td><td>Mod&egrave;le payant &laquo;&nbsp;coder&nbsp;&raquo; de milieu de gamme</td></tr>
+        <tr><td>Architecture complexe, bug coriace</td><td>Le meilleur mod&egrave;le disponible, ponctuellement</td></tr>
+        <tr><td>Donn&eacute;es sensibles / hors ligne</td><td><span class="badge local">Local</span> (Ollama)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Comprendre le prix (sans se ruiner)</h2>
+  <p>Les mod&egrave;les se facturent <strong>par million de tokens</strong>. Les tokens de <em>sortie</em> co&ucirc;tent
+  g&eacute;n&eacute;ralement 3 &agrave; 5 fois plus cher que ceux d'<em>entr&eacute;e</em>. Exemple de calcul mental&nbsp;:</p>
+  <div class="diagram">Un fichier de 200 lignes  ≈  3 000 tokens d'entrée
+Le modèle répond 500 lignes ≈  6 000 tokens de sortie
+
+À 1 $/M en entrée et 4 $/M en sortie :
+   entrée : 3 000 × 1/1 000 000   = 0,003 $
+   sortie : 6 000 × 4/1 000 000   = 0,024 $
+                                ───────────
+   total                           ≈ 0,027 $  (≈ 2,5 centimes)
+
+→ Un échange "normal" coûte quelques centimes.
+  Ce qui coûte cher, c'est de renvoyer TOUT le projet à chaque fois.</div>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Les 3&nbsp;$ qui font la diff&eacute;rence</div>
+    <p style="margin:0">Les mod&egrave;les <strong>premium</strong> co&ucirc;tent souvent 5 &agrave; 30&nbsp;$ par million de
+    tokens&nbsp;; les mod&egrave;les <strong>coder &eacute;conomiques</strong> (DeepSeek, Qwen, certains open source) tournent
+    autour de quelques dizaines de centimes pour des r&eacute;sultats tr&egrave;s proches sur le code.</p>
+  </div>
+
+  <h2>Options payantes utiles &agrave; conna&icirc;tre</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Option</th><th>Pour qui</th><th>Ordre de prix (2026)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cr&eacute;dit OpenRouter</strong> (une fois)</td><td>D&eacute;bloquer 1000 req/jour sur les mod&egrave;les gratuits</td><td>d&egrave;s ~10&nbsp;$</td></tr>
+        <tr><td><strong>OpenCode Go</strong> (abonnement)</td><td>Acc&egrave;s aux meilleurs mod&egrave;les open source pour coder</td><td>~10&nbsp;$/mois</td></tr>
+        <tr><td><strong>Cl&eacute;s API &agrave; l'usage</strong></td><td>Payer seulement ce qu'on consomme</td><td>quelques centimes/&eacute;change</td></tr>
+        <tr><td><strong>GitHub Copilot</strong></td><td>D&eacute;j&agrave; abonn&eacute;&nbsp;; connexion par OAuth</td><td>abonnement mensuel</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Identifier un bon mod&egrave;le sur models.dev</h2>
+  <p>Pour chaque mod&egrave;le, tu y trouves&nbsp;: la <strong>fen&ecirc;tre de contexte</strong>, le <strong>prix</strong>
+  entr&eacute;e/sortie, le support des <strong>outils</strong> et des <strong>images</strong>, et les
+  <strong>variants</strong> (niveaux de raisonnement). Trois r&eacute;flexes&nbsp;:</p>
+  <ul>
+    <li>V&eacute;rifie d'abord que <strong>les outils sont support&eacute;s</strong> (sinon aucun agent ne marchera).</li>
+    <li>Regarde le <strong>prix de sortie</strong>, c'est lui qui domine la facture.</li>
+    <li>Pr&eacute;f&egrave;re un contexte <strong>suffisant</strong> plut&ocirc;t que maximal&nbsp;: un tr&egrave;s gros contexte co&ucirc;te cher &agrave; remplir.</li>
+  </ul>
+
+  <h2>Les variants : plus ou moins de raisonnement</h2>
+  <p>Beaucoup de mod&egrave;les exposent des <strong>variants</strong> (<code class="inline">#high</code>,
+  <code class="inline">#low</code>&hellip;) qui r&egrave;glent l'effort de raisonnement. On les choisit au moment de
+  l'ex&eacute;cution&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run --model openai/gpt-5.2#high "Analyse cette architecture"
+opencode run --model openai/gpt-5.2#low  "Reformate ce JSON"</pre>
+  <p>R&egrave;gle&nbsp;: <code class="inline">#low</code> pour le m&eacute;canique, <code class="inline">#high</code> pour
+  le difficile. On &eacute;conomise du temps et de l'argent.</p>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Dans <code class="inline">/models</code>, choisis <strong>deux</strong> mod&egrave;les&nbsp;: un gratuit et un payant (m&ecirc;me le moins cher).</li>
+      <li>Pose exactement la <strong>m&ecirc;me question</strong> aux deux&nbsp;: <code class="inline">opencode run --model &hellip; "Écris une fonction JS qui vérifie si un email est valide"</code>.</li>
+      <li>Compare&nbsp;: qualit&eacute; de la r&eacute;ponse, vitesse, et (si affich&eacute;) le co&ucirc;t.</li>
+      <li>Note ton verdict. Tu viens de cr&eacute;er ta grille de choix personnelle.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Cinq crit&egrave;res&nbsp;: <strong>contexte, outils, prix, qualit&eacute; code, vitesse</strong>.</li>
+      <li><strong>Outils = obligatoire</strong> pour un agent&nbsp;; sans tool calling, rien ne fonctionne.</li>
+      <li>On paie par <strong>million de tokens</strong>, la sortie co&ucirc;te plus cher que l'entr&eacute;e.</li>
+      <li>Un petit mod&egrave;le pour le simple, un gros seulement quand c'est utile. Les <strong>variants</strong> aident.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 08 · CONFIGURER SES PROVIDERS                                    -->
+<!-- ================================================================ -->
+<section class="page" id="config-providers" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="08" data-title="Configurer ses providers (fichier de config)">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>Configurer ses providers (fichier de config)</h1>
+  <p class="lead">Jusqu'ici on a tout fait &agrave; la souris. Maintenant on &eacute;crit le petit fichier qui rend
+  ta configuration <strong>reproductible</strong>&nbsp;: mod&egrave;le par d&eacute;faut, providers, mod&egrave;les sur mesure,
+  variables d'environnement. C'est la pi&egrave;ce qui fait passer de &laquo;&nbsp;bricolage&nbsp;&raquo; &agrave;
+  &laquo;&nbsp;poste de travail&nbsp;&raquo;.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">&Eacute;crire un <code class="inline">opencode.jsonc</code> propre (version V2) avec au moins
+    un provider, un mod&egrave;le par d&eacute;faut et un provider personnalis&eacute;, sans jamais exposer de secret.</p>
+  </div>
+
+  <h2>O&ugrave; se trouve ce fichier&nbsp;?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Port&eacute;e</th><th>Emplacement</th></tr></thead>
+      <tbody>
+        <tr><td>Tous mes projets</td><td><code class="inline">~/.config/opencode/opencode.json(c)</code></td></tr>
+        <tr><td>Un seul projet</td><td><code class="inline">&lt;projet&gt;/opencode.json(c)</code></td></tr>
+        <tr><td>Un seul projet (variante)</td><td><code class="inline">&lt;projet&gt;/.opencode/opencode.json(c)</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>OpenCode fusionne les fichiers du plus lointain au plus proche&nbsp;: le projet <strong>&eacute;crase</strong>
+  le global, sans effacer ce qui n'entre pas en conflit.</p>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Version 1 ou Version 2&nbsp;?</div>
+    <p style="margin:0">OpenCode&nbsp;2 (V2) utilise des noms au pluriel&nbsp;: <code class="inline">providers</code>,
+    <code class="inline">agents</code>, <code class="inline">plugins</code>, <code class="inline">permissions</code>.
+    Les anciens fichiers V1 (singulier <code class="inline">provider</code>, <code class="inline">agent</code>&hellip;)
+    restent accept&eacute;s, mais <strong>on &eacute;crit la forme V2</strong> dans ce cours. Si tu veux convertir
+    un vieux fichier, demande simplement &agrave; OpenCode&nbsp;:
+    <code class="inline">Migre ma configuration OpenCode de V1 vers la forme V2.</code></p>
+  </div>
+
+  <h2>Un fichier minimal</h2>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/anthropic/claude-sonnet-4"
+}</pre>
+  <p>Le champ <code class="inline">$schema</code> active l'autocompl&eacute;tion dans ton &eacute;diteur. Le champ
+  <code class="inline">model</code> choisit le mod&egrave;le par d&eacute;faut, au format
+  <code class="inline">provider/modèle</code>.</p>
+
+  <h2>Un fichier complet, comment&eacute;</h2>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "$schema": "https://opencode.ai/config.json",
+
+  // Modèle utilisé par défaut dans les sessions
+  "model": "openrouter/qwen/qwen3.8-27b:free",
+
+  // Agent principal par défaut (voir chapitre 11)
+  "default_agent": "build",
+
+  // Le "petit" modèle (titres, résumés) → un modèle rapide et pas cher
+  "agents": {
+    "title": { "model": "openrouter/google/gemma-4-31b-it:free" }
+  },
+
+  "providers": {
+    "openrouter": {
+      "env": ["OPENROUTER_API_KEY"],
+      "models": {
+        "qwen/qwen3.8-27b:free": { "name": "Qwen 3.8 (gratuit)" }
+      }
+    },
+
+    // Provider personnalisé compatible OpenAI
+    "mon-serveur": {
+      "name": "Mon serveur local",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://127.0.0.1:8000/v1",
+        "apiKey": "{env:MON_SERVEUR_KEY}"
+      },
+      "models": {
+        "coder": {
+          "modelID": "model-name-on-server",
+          "name": "Mon codeur",
+          "capabilities": { "tools": true, "input": ["text"], "output": ["text"] },
+          "limit": { "context": 32768, "output": 8192 }
+        }
+      }
+    }
+  }
+}</pre>
+  <p>D&eacute;composons les blocs importants&nbsp;:</p>
+  <ul>
+    <li><code class="inline">env</code>&nbsp;: la liste des variables d'environnement qui peuvent fournir la cl&eacute;.</li>
+    <li><code class="inline">package</code>&nbsp;: le &laquo;&nbsp;moteur&nbsp;&raquo; qui parle au provider. Pour une API
+    compatible OpenAI, on utilise <code class="inline">@opencode/ai/providers/openai-compatible</code>.</li>
+    <li><code class="inline">settings.baseURL</code>&nbsp;: l'adresse de l'API.</li>
+    <li><code class="inline">settings.apiKey</code>&nbsp;: <strong>jamais en clair</strong>&nbsp;! On &eacute;crit
+    <code class="inline">{env:NOM}</code>, la valeur vient de ton environnement.</li>
+    <li><code class="inline">models</code>&nbsp;: les mod&egrave;les expos&eacute;s, avec leur <code class="inline">modelID</code>
+    r&eacute;el, leurs capacit&eacute;s et leurs limites.</li>
+  </ul>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>La r&egrave;gle d'or des secrets</div>
+    <p style="margin:0">Dans un fichier de config <strong>versionn&eacute;</strong>, on n'&eacute;crit jamais une cl&eacute;
+    en clair. On utilise <code class="inline">{env:NOM_DE_VARIABLE}</code> et on d&eacute;finit la variable dans le
+    syst&egrave;me. Comme &ccedil;a, le fichier peut &ecirc;tre partag&eacute; sans risque.</p>
+  </div>
+  <pre data-file="~/.bashrc ou ~/.zshrc" data-lang="bash">export OPENROUTER_API_KEY="sk-or-..."
+export MON_SERVEUR_KEY="ma-cle-locale"</pre>
+
+  <h2>Rediriger un provider existant</h2>
+  <p>Tu peux faire passer un provider du catalogue par un proxy compatible en changeant juste l'URL&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "providers": {
+    "anthropic": {
+      "settings": { "baseURL": "https://mon-proxy.example.com/anthropic" }
+    }
+  }
+}</pre>
+
+  <h2>Variants et co&ucirc;ts d'un mod&egrave;le</h2>
+  <p>On peut d&eacute;finir ses propres variants (niveaux de raisonnement) et d&eacute;clarer les prix pour que
+  la facturation affich&eacute;e soit juste&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "providers": {
+    "openai": {
+      "models": {
+        "gpt-5.2": {
+          "variants": [
+            { "id": "fast", "settings": { "reasoningEffort": "low" } },
+            { "id": "deep", "settings": { "reasoningEffort": "high" } }
+          ],
+          "cost": { "input": 1.25, "output": 10 },
+          "limit": { "context": 200000, "output": 32000 }
+        }
+      }
+    }
+  }
+}</pre>
+
+  <h2>V&eacute;rifier que la config est prise en compte</h2>
+  <pre data-file="terminal" data-lang="bash"># Les fichiers de config sont rechargés automatiquement.
+# En cas de doute, redémarre le service :
+opencode service restart
+
+# Puis liste les modèles disponibles dans la session :
+# dans le TUI → /models</pre>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Ouvre (ou cr&eacute;e) <code class="inline">~/.config/opencode/opencode.jsonc</code>.</li>
+      <li>Colle le fichier &laquo;&nbsp;minimal&nbsp;&raquo;, puis remplace le mod&egrave;le par un mod&egrave;le gratuit que tu as connect&eacute;.</li>
+      <li>Ajoute la section <code class="inline">agents.title.model</code> avec un mod&egrave;le rapide.</li>
+      <li>Exporte ta variable d'environnement, ouvre un <strong>nouveau</strong> terminal, et relance <code class="inline">opencode</code>.</li>
+      <li>V&eacute;rifie dans <code class="inline">/models</code> que ton mod&egrave;le par d&eacute;faut est bien s&eacute;lectionn&eacute;.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Global&nbsp;: <code class="inline">~/.config/opencode/opencode.jsonc</code>&nbsp;; projet&nbsp;: <code class="inline">opencode.jsonc</code>.</li>
+      <li>V2 utilise le pluriel&nbsp;: <code class="inline">providers</code>, <code class="inline">agents</code>, <code class="inline">plugins</code>.</li>
+      <li>Les secrets passent par <code class="inline">{env:NOM}</code>, jamais en clair.</li>
+      <li>Un provider personnalis&eacute; se d&eacute;crit avec <code class="inline">package</code> + <code class="inline">settings.baseURL</code> + <code class="inline">models</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 09 · MODÈLES LOCAUX                                              -->
+<!-- ================================================================ -->
+<section class="page" id="modeles-locaux" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="09" data-title="Mod&egrave;les locaux (Ollama, LM Studio, vLLM)">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>Mod&egrave;les locaux (Ollama, LM Studio, vLLM)</h1>
+  <p class="lead">Et si le mod&egrave;le tournait <strong>sur ta propre machine</strong>&nbsp;? Z&eacute;ro cl&eacute; API,
+  z&eacute;ro facture, z&eacute;ro Internet. C'est plus lent et moins puissant qu'un gros mod&egrave;le cloud, mais pour
+  beaucoup de t&acirc;ches c'est largement suffisant &mdash; et parfait pour les donn&eacute;es sensibles.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Installer Ollama, t&eacute;l&eacute;charger un mod&egrave;le, et le faire d&eacute;couvrir automatiquement
+    par OpenCode.</p>
+  </div>
+
+  <h2>Comment &ccedil;a marche</h2>
+  <div class="diagram">  OpenCode  ──▶  http://127.0.0.1:11434  ──▶  Ollama  ──▶  modèle local
+                 (serveur local)                    (sur ta machine)
+  Aucune clé, aucune requête vers Internet. Le modèle tourne sur ton CPU/GPU.</div>
+
+  <h2>Installer Ollama</h2>
+  <pre data-file="terminal" data-lang="bash"># Linux / macOS
+curl -fsSL https://ollama.com/install.sh | sh
+
+# ou Homebrew
+brew install ollama</pre>
+  <p>D&eacute;marre le serveur local, puis t&eacute;l&eacute;charge un mod&egrave;le&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">ollama serve            # démarre le serveur (souvent déjà lancé)
+ollama pull qwen3:8b    # télécharge un modèle 8B
+ollama list             # vérifie ce qui est installé</pre>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Quel mod&egrave;le pour quelle machine&nbsp;?</div>
+    <div class="table-wrap" style="margin:10px 0 0">
+      <table>
+        <thead><tr><th>RAM / VRAM</th><th>Mod&egrave;les raisonnables</th></tr></thead>
+        <tbody>
+          <tr><td>8 Go</td><td>Mod&egrave;les 0,5B &agrave; 3B (tests, d&eacute;couvert)</td></tr>
+          <tr><td>16 Go</td><td>7B &agrave; 8B (usage quotidien l&eacute;ger)</td></tr>
+          <tr><td>32 Go</td><td>13B &agrave; 14B (bon compromis)</td></tr>
+          <tr><td>64 Go+</td><td>30B+ ou mod&egrave;les &laquo;&nbsp;coder&nbsp;&raquo; sp&eacute;cialis&eacute;s</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <h2>Laisser OpenCode d&eacute;couvrir Ollama</h2>
+  <p>OpenCode interroge automatiquement <code class="inline">http://127.0.0.1:11434</code> et ajoute les mod&egrave;les
+  trouv&eacute;s &agrave; <code class="inline">/models</code>, sans cl&eacute;. Tu peux simplement faire&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "model": "ollama/qwen3:8b"
+}</pre>
+  <p>Ou l'utiliser ponctuellement&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run --model ollama/qwen3:8b "Explique-moi cette fonction"</pre>
+
+  <h3>Si Ollama tourne ailleurs</h3>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "providers": {
+    "ollama": {
+      "settings": {
+        "baseURL": "http://192.168.1.19:11434/v1",
+        "apiKey": "{env:OLLAMA_API_KEY}"
+      }
+    }
+  }
+}</pre>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Le <code class="inline">/v1</code> est obligatoire</div>
+    <p style="margin:0">Pour un serveur distant, on pointe vers l'URL compatible OpenAI (qui finit par
+    <code class="inline">/v1</code>). OpenCode en d&eacute;duit les chemins natifs pour la d&eacute;couverte.</p>
+  </div>
+
+  <h2>LM Studio et vLLM</h2>
+  <p>Deux autres runtimes locaux sont d&eacute;tect&eacute;s automatiquement&nbsp;:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Runtime</th><th>Adresse par d&eacute;faut</th><th>Usage</th></tr></thead>
+      <tbody>
+        <tr><td><strong>LM Studio</strong></td><td><code class="inline">http://127.0.0.1:1234/v1</code></td><td>Interface graphique pour t&eacute;l&eacute;charger et tester</td></tr>
+        <tr><td><strong>vLLM</strong></td><td><code class="inline">http://127.0.0.1:8000/v1</code></td><td>Serveur performant, souvent sur GPU</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "providers": {
+    "lmstudio": { "settings": { "baseURL": "http://127.0.0.1:1234/v1" } },
+    "vllm":     { "settings": { "baseURL": "http://127.0.0.1:8000/v1" } }
+  }
+}</pre>
+  <p>Usage&nbsp;: <code class="inline">opencode run --model lmstudio/&lt;modèle&gt; "&hellip;"</code>.</p>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128680;</span>Le pi&egrave;ge des outils en local</div>
+    <p style="margin:0">Un mod&egrave;le local doit supporter le <strong>tool calling</strong> pour qu'un agent agisse.
+    Les mod&egrave;les d&eacute;couverts par vLLM arrivent souvent avec les outils <strong>d&eacute;sactiv&eacute;s</strong>
+    (il faut activer le tool calling c&ocirc;t&eacute; serveur). Teste toujours&nbsp;: <code class="inline">/models</code>,
+    puis demande au mod&egrave;le de lire un fichier. S'il ne peut pas, il n'est pas pr&ecirc;t pour l'agent.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Installe Ollama et lance <code class="inline">ollama pull qwen3:8b</code> (ou un mod&egrave;le adapt&eacute; &agrave; ta RAM).</li>
+      <li>V&eacute;rifie que le serveur r&eacute;pond&nbsp;: <code class="inline">curl http://127.0.0.1:11434/api/tags</code>.</li>
+      <li>Dans OpenCode, tape <code class="inline">/models</code>&nbsp;: ton mod&egrave;le local doit appara&icirc;tre sous <code class="inline">ollama/</code>.</li>
+      <li>Teste hors ligne&nbsp;: coupe le Wi-Fi et lance <code class="inline">opencode run --model ollama/qwen3:8b "2+2 ?"</code>. Si &ccedil;a r&eacute;pond, tu es 100&nbsp;% local.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Ollama / LM Studio / vLLM = mod&egrave;les sur <strong>ta machine</strong>, sans cl&eacute; ni facture.</li>
+      <li>OpenCode les d&eacute;tecte automatiquement sur leurs adresses locales.</li>
+      <li>Choisis la taille du mod&egrave;le selon ta RAM/VRAM.</li>
+      <li>V&eacute;rifie toujours le <strong>support des outils</strong>&nbsp;: sans lui, pas d'agent.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 10 · RÉDUIRE LES COÛTS                                           -->
+<!-- ================================================================ -->
+<section class="page" id="reduire-couts" data-module="Module 3 &middot; Providers &amp; mod&egrave;les"
+         data-num="10" data-title="R&eacute;duire les co&ucirc;ts (et rester efficace)">
+  <span class="kicker">Module 3 &middot; Providers &amp; mod&egrave;les</span>
+  <h1>R&eacute;duire les co&ucirc;ts (et rester efficace)</h1>
+  <p class="lead">Beaucoup pensent que l'IA co&ucirc;te cher. En r&eacute;alit&eacute;, mal configur&eacute;e, elle co&ucirc;te
+  cher&nbsp;; bien configur&eacute;e, elle co&ucirc;te des centimes. Voici les leviers concrets, du plus efficace au plus fin.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Diviser ta facture (parfois jusqu'&agrave; z&eacute;ro) sans perdre en qualit&eacute;, gr&acirc;ce &agrave;
+    sept techniques.</p>
+  </div>
+
+  <h2>Levier 1 &mdash; Un petit mod&egrave;le pour les petites t&acirc;ches</h2>
+  <p>Les t&acirc;ches m&eacute;caniques (titre de session, r&eacute;sum&eacute;s, formatage) n'ont pas besoin d'un mod&egrave;le
+  premium. On configure l'agent <code class="inline">title</code> sur un mod&egrave;le gratuit ou tr&egrave;s bon march&eacute;&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "agents": {
+    "title": { "model": "openrouter/google/gemma-4-31b-it:free" }
+  }
+}</pre>
+
+  <h2>Levier 2 &mdash; Le bon variant au bon moment</h2>
+  <p>Le <strong>variant</strong> r&egrave;gle l'effort de raisonnement. Un variant bas consomme moins de tokens
+  de r&eacute;flexion&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode run --model openai/gpt-5.2#low "Reformate ce tableau"</pre>
+
+  <h2>Levier 3 &mdash; R&eacute;duire le contexte (le plus gros levier)</h2>
+  <p>Le co&ucirc;t explose quand on renvoie <strong>tout le projet</strong> &agrave; chaque message. Trois r&eacute;flexes&nbsp;:</p>
+  <ul>
+    <li>Utiliser <code class="inline">@fichier</code> pour cibler <strong>un seul</strong> fichier, pas tout le dossier.</li>
+    <li>Demander un <strong>diff</strong> (les lignes qui changent) plut&ocirc;t qu'une r&eacute;&eacute;criture compl&egrave;te.</li>
+    <li>D&eacute;marrer une <strong>nouvelle session</strong> quand le sujet change&nbsp;: l'ancien historique ne suit pas.</li>
+  </ul>
+
+  <h2>Levier 4 &mdash; La compaction automatique</h2>
+  <p>Quand une session devient longue, OpenCode peut <strong>r&eacute;sumer</strong> le vieux contexte pour ne pas le
+  renvoyer en entier. On r&egrave;gle le budget conserv&eacute;&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "compaction": {
+    "auto": true,
+    "keep": { "tokens": 8000 },
+    "buffer": 20000
+  }
+}</pre>
+  <ul>
+    <li><code class="inline">auto</code>&nbsp;: active la compaction automatique.</li>
+    <li><code class="inline">keep.tokens</code>&nbsp;: combien de contexte r&eacute;cent on garde tel quel.</li>
+    <li><code class="inline">buffer</code>&nbsp;: marge de s&eacute;curit&eacute; avant d&eacute;bordement.</li>
+  </ul>
+
+  <h2>Levier 5 &mdash; Limiter ce que l'agent peut faire</h2>
+  <p>Un agent qui ne peut pas lancer de commandes inutiles consomme moins. On utilise les
+  <strong>permissions</strong> (on les approfondit au chapitre&nbsp;11) et la limite d'&eacute;tapes&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "agents": {
+    "economique": {
+      "mode": "primary",
+      "steps": 6,
+      "permissions": [
+        { "action": "shell", "resource": "*", "effect": "deny" },
+        { "action": "webfetch", "resource": "*", "effect": "deny" }
+      ]
+    }
+  }
+}</pre>
+
+  <h2>Levier 6 &mdash; Les tokens en cache</h2>
+  <p>Chez beaucoup de providers, relire un <strong>pr&eacute;fixe stable</strong> (les m&ecirc;mes instructions au d&eacute;but)
+  co&ucirc;te bien moins cher gr&acirc;ce au <em>cache</em>. Concr&egrave;tement&nbsp;: garde tes instructions stables et
+  groupe-les <strong>au d&eacute;but</strong> du contexte, ne les r&eacute;&eacute;cris pas &agrave; chaque message.</p>
+  <pre data-file="terminal" data-lang="bash"># OpenRouter renvoie le détail des tokens en cache dans la réponse :
+# usage.prompt_tokens_details.cached_tokens</pre>
+
+  <h2>Levier 7 &mdash; Le basculement automatique (fallback)</h2>
+  <p>Quand un provider atteint son quota, on veut basculer sans &ecirc;tre bloqu&eacute;. Deux approches&nbsp;:</p>
+  <div class="grid two">
+    <div class="mini">
+      <h5>A. C&ocirc;t&eacute; provider (le plus simple)</h5>
+      <p>OpenRouter sait encha&icirc;ner plusieurs mod&egrave;les en cas d'&eacute;chec, via une liste de secours
+      pass&eacute;e dans le corps de la requ&ecirc;te.</p>
+    </div>
+    <div class="mini">
+      <h5>B. C&ocirc;t&eacute; OpenCode (le plus souple)</h5>
+      <p>Un <strong>plugin</strong> peut observer les erreurs de session et changer de mod&egrave;le tout seul.
+      On voit les plugins au chapitre&nbsp;15.</p>
+    </div>
+  </div>
+  <p>Exemple d'approche A&nbsp;: d&eacute;clarer un mod&egrave;le de secours dans le corps de la requ&ecirc;te du provider&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "providers": {
+    "openrouter": {
+      "body": {
+        "models": [
+          "qwen/qwen3.8-27b:free",
+          "google/gemma-4-31b-it:free",
+          "openrouter/free"
+        ],
+        "route": "fallback"
+      }
+    }
+  }
+}</pre>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Les options de corps sont sp&eacute;cifiques au provider</div>
+    <p style="margin:0">Le champ <code class="inline">body</code> est fusionn&eacute; dans <strong>chaque</strong> requ&ecirc;te.
+    Une option propre &agrave; OpenRouter n'aura aucun effet chez un autre provider. V&eacute;rifie toujours dans la
+    doc du provider concern&eacute; avant de l'ajouter &mdash; et n'ajoute que ce dont tu as besoin.</p>
+  </div>
+
+  <h2>La checklist anti-gaspillage</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>R&eacute;flexe</th><th>&Eacute;conomie</th></tr></thead>
+      <tbody>
+        <tr><td>Mod&egrave;le gratuit pour apprendre</td><td>&#9733;&#9733;&#9733;&#9733;</td></tr>
+        <tr><td>Cibler les fichiers avec <code class="inline">@</code></td><td>&#9733;&#9733;&#9733;&#9733;</td></tr>
+        <tr><td>Demander des diffs, pas des r&eacute;&eacute;critures</td><td>&#9733;&#9733;&#9733;</td></tr>
+        <tr><td>Nouvelle session par sujet</td><td>&#9733;&#9733;&#9733;</td></tr>
+        <tr><td>Variant bas pour le m&eacute;canique</td><td>&#9733;&#9733;</td></tr>
+        <tr><td>Compaction active</td><td>&#9733;&#9733;</td></tr>
+        <tr><td>Tokens en cache (pr&eacute;fixe stable)</td><td>&#9733;&#9733;</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Configure le levier&nbsp;1 (agent <code class="inline">title</code> sur un mod&egrave;le gratuit).</li>
+      <li>Active la compaction avec <code class="inline">keep.tokens</code> &agrave; 8000 et <code class="inline">buffer</code> &agrave; 20000.</li>
+      <li>Cr&eacute;e une session longue, puis demande un r&eacute;sum&eacute;&nbsp;: observe que le contexte est r&eacute;duit.</li>
+      <li>Sur ton dernier projet, refais une t&acirc;che en ciblant <code class="inline">@fichier</code> au lieu du dossier entier, et compare le r&eacute;sultat.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Le plus gros levier&nbsp;: <strong>r&eacute;duire le contexte</strong> envoy&eacute;.</li>
+      <li>Petit mod&egrave;le pour le simple, variant <code class="inline">#low</code> pour le m&eacute;canique.</li>
+      <li>La <strong>compaction</strong> r&eacute;sume automatiquement le vieux contexte.</li>
+      <li>Le <strong>fallback</strong> (&eacute;vite les blocages de quota) se configure c&ocirc;t&eacute; provider ou via plugin.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 11 · QU'EST-CE QU'UN AGENT                                       -->
+<!-- ================================================================ -->
+<section class="page" id="agent" data-module="Module 4 &middot; Les agents"
+         data-num="11" data-title="Qu'est-ce qu'un agent ?">
+  <span class="kicker">Module 4 &middot; Les agents</span>
+  <h1>Qu'est-ce qu'un agent&nbsp;?</h1>
+  <p class="lead">Jusqu'ici, tu as parl&eacute; &agrave; un mod&egrave;le. Un <strong>agent</strong> va plus loin&nbsp;: il a un
+  r&ocirc;le, des outils, des r&egrave;gles, et parfois m&ecirc;me des agents assistants. C'est la brique qui fait
+  vraiment gagner du temps.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Comprendre les <strong>trois modes</strong> d'agent, conna&icirc;tre les agents int&eacute;gr&eacute;s
+    &agrave; OpenCode, et savoir &agrave; quoi sert une <strong>permission</strong>.</p>
+  </div>
+
+  <h2>La recette d'un agent</h2>
+  <div class="diagram">  AGENT =  rôle (system prompt)   +   modèle   +   outils
+           +   permissions       +   limites
+
+  Exemples de rôles :
+    - "build"   : le développeur par défaut
+    - "plan"    : réfléchit sans modifier les fichiers
+    - "reviewer": relit le code, ne l'édite jamais</div>
+  <p>Retiens la formule&nbsp;: <strong>un agent = un LLM sp&eacute;cialis&eacute; pour une mission</strong>, avec des
+  garde-fous. Le m&ecirc;me mod&egrave;le peut donc servir dans plusieurs agents tr&egrave;s diff&eacute;rents.</p>
+
+  <h2>Les trois modes</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Mode</th><th>O&ugrave; il vit</th><th>Pour quoi</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">primary</code></td><td>La session principale (toi &agrave; lui)</td><td>Ton agent de travail principal</td></tr>
+        <tr><td><code class="inline">subagent</code></td><td>Dans une session enfant, lanc&eacute; par un autre agent</td><td>Une t&acirc;che d&eacute;l&eacute;gu&eacute;e (revue, recherche)</td></tr>
+        <tr><td><code class="inline">all</code></td><td>Les deux</td><td>Usage souple</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128101;</span>Une &eacute;quipe</div>
+    <p style="margin:0">L'agent <strong>primary</strong> est le coll&egrave;gue &agrave; qui tu parles tous les jours.
+    Les <strong>subagents</strong> sont des sp&eacute;cialistes qu'il appelle au besoin&nbsp;: le relecteur, l'explorateur
+    de code. Tu ne discutes pas avec eux&nbsp;: ils travaillent en coulisses et rendent leur rapport.</p>
+  </div>
+
+  <h2>Les agents int&eacute;gr&eacute;s &agrave; OpenCode</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Agent</th><th>Mode</th><th>Ce qu'il fait</th></tr></thead>
+      <tbody>
+        <tr><td><strong>build</strong></td><td>primary</td><td>L'agent de code par d&eacute;faut. Peut lire et &eacute;diter&nbsp;; les actions sensibles demandent une confirmation.</td></tr>
+        <tr><td><strong>plan</strong></td><td>primary</td><td>Explore et planifie <em>sans</em> modifier les fichiers normaux. Id&eacute;al pour r&eacute;fl&eacute;chir avant d'agir.</td></tr>
+        <tr><td><strong>general</strong></td><td>subagent</td><td>Recherche et t&acirc;ches multi-&eacute;tapes, avec de larges acc&egrave;s aux outils.</td></tr>
+        <tr><td><strong>explore</strong></td><td>subagent</td><td>Cherche et lit le code ou le web, sans rien modifier. Parfait pour comprendre un projet inconnu.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Il existe aussi des agents <em>cach&eacute;s</em> (<code class="inline">compaction</code>, <code class="inline">title</code>,
+  <code class="inline">summary</code>) que tu ne choisis pas directement&nbsp;: ils font la maintenance (titrer les sessions,
+  r&eacute;sumer le contexte).</p>
+
+  <h2>Le bon r&eacute;flexe : plan avant build</h2>
+  <pre data-file="dans OpenCode" data-lang="text"># 1. Demander un plan (l'agent explore sans rien casser)
+/plan Comment ajouter une authentification à ce projet ?
+
+# 2. Revenir en build et exécuter
+/build Applique le plan étape par étape.</pre>
+  <p>Planifier co&ucirc;te moins cher que r&eacute;parer. On explore, on valide l'approche, puis on ex&eacute;cute.</p>
+
+  <h2>Les permissions : le contr&ocirc;le</h2>
+  <p>Une permission dit ce qu'un agent a le droit de faire. En V2, c'est une <strong>liste ordonn&eacute;e de r&egrave;gles</strong>&nbsp;:
+  la derni&egrave;re r&egrave;gle qui correspond gagne.</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "permissions": [
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "*",     "resource": "*",           "effect": "allow" }
+  ]
+}</pre>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Champ</th><th>Signification</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">action</code></td><td>L'outil concern&eacute; (voir tableau ci-dessous). Les jokers <code class="inline">*</code> sont permis.</td></tr>
+        <tr><td><code class="inline">resource</code></td><td>Ce qui est vis&eacute; (chemin, commande, identifiant d'agent).</td></tr>
+        <tr><td><code class="inline">effect</code></td><td><code class="inline">allow</code>, <code class="inline">ask</code> (demande), ou <code class="inline">deny</code>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Action</th><th>Couvre</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">shell</code></td><td>Les commandes terminal</td></tr>
+        <tr><td><code class="inline">edit</code></td><td>Modifier/&eacute;crire des fichiers</td></tr>
+        <tr><td><code class="inline">read</code>, <code class="inline">glob</code>, <code class="inline">grep</code></td><td>Lire et chercher dans les fichiers</td></tr>
+        <tr><td><code class="inline">webfetch</code>, <code class="inline">websearch</code></td><td>Acc&egrave;s web</td></tr>
+        <tr><td><code class="inline">subagent</code></td><td>Lancer un agent enfant</td></tr>
+        <tr><td><code class="inline">skill</code></td><td>Charger une comp&eacute;tence (chapitre&nbsp;14)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Le principe du moindre privil&egrave;ge</div>
+    <p style="margin:0">Donne &agrave; chaque agent le <strong>minimum</strong> d'acc&egrave;s n&eacute;cessaire. Un agent de revue
+    qui ne peut pas &eacute;crire ni lancer de commandes est &agrave; la fois plus s&ucirc;r et moins co&ucirc;teux.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Dans OpenCode, alterne entre <code class="inline">/plan</code> et <code class="inline">/build</code> sur une m&ecirc;me demande et observe la diff&eacute;rence.</li>
+      <li>Demande &agrave; l'agent build&nbsp;: <em>&laquo;&nbsp;Utilise le subagent explore pour me r&eacute;sumer l'architecture de ce dossier.&nbsp;&raquo;</em></li>
+      <li>Ouvre <code class="inline">~/.config/opencode/opencode.json</code> et rep&egrave;re les <code class="inline">permissions</code> globales si tu en as.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un agent = <strong>r&ocirc;le + mod&egrave;le + outils + permissions + limites</strong>.</li>
+      <li>Trois modes&nbsp;: <code class="inline">primary</code>, <code class="inline">subagent</code>, <code class="inline">all</code>.</li>
+      <li>Int&eacute;gr&eacute;s&nbsp;: <strong>build</strong>, <strong>plan</strong>, <strong>general</strong>, <strong>explore</strong>.</li>
+      <li>Les <strong>permissions</strong> limitent chaque agent&nbsp;: dernier r&egrave;gle gagnante.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 12 · CRÉER UN AGENT LOCAL                                        -->
+<!-- ================================================================ -->
+<section class="page" id="creer-agent" data-module="Module 4 &middot; Les agents"
+         data-num="12" data-title="Cr&eacute;er un agent local (pas &agrave; pas)">
+  <span class="kicker">Module 4 &middot; Les agents</span>
+  <h1>Cr&eacute;er un agent local (pas &agrave; pas)</h1>
+  <p class="lead">Un agent, c'est juste un <strong>fichier texte</strong> dans un dossier. On va en cr&eacute;er un vrai,
+  du nom &agrave; la permission, puis l'utiliser.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Cr&eacute;er un agent de <strong>revue de code</strong> en lecture seule, le d&eacute;clarer comme
+    agent principal par d&eacute;faut, et le tester.</p>
+  </div>
+
+  <h2>O&ugrave; placer le fichier&nbsp;?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Port&eacute;e</th><th>Emplacement</th></tr></thead>
+      <tbody>
+        <tr><td>Global (tous les projets)</td><td><code class="inline">~/.config/opencode/agents/&lt;nom&gt;.md</code></td></tr>
+        <tr><td>Projet</td><td><code class="inline">&lt;projet&gt;/.opencode/agents/&lt;nom&gt;.md</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Le chemin devient l'identifiant. Exemple&nbsp;:
+  <code class="inline">.opencode/agents/team/reviewer.md</code> &rarr; identifiant <code class="inline">team/reviewer</code>.</p>
+
+  <h2>Pas &agrave; pas</h2>
+  <ol class="steps">
+    <li><strong>Cr&eacute;er le dossier.</strong></li>
+  </ol>
+  <pre data-file="terminal" data-lang="bash">mkdir -p ~/.config/opencode/agents</pre>
+  <ol class="steps" start="2">
+    <li><strong>&Eacute;crire le fichier de l'agent.</strong> Le corps du Markdown devient le &laquo;&nbsp;system prompt&nbsp;&raquo;
+    (les instructions donn&eacute;es au mod&egrave;le).</li>
+  </ol>
+  <pre data-file="~/.config/opencode/agents/reviewer.md" data-lang="markdown">---
+description: Relit les changements et signale les bugs sans jamais modifier le code
+mode: subagent
+model: openrouter/qwen/qwen3.8-27b:free
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+  - action: shell
+    resource: "*"
+    effect: deny
+---
+
+Tu es un relecteur de code strict et bienveillant.
+
+Ta mission :
+- Lire les changements (diff) fournis.
+- Lister les problèmes par ordre de gravité : bug, faille, test manquant.
+- Pour chaque problème : le fichier, la ligne, et pourquoi c'est un problème.
+
+Règles :
+- Tu ne modifies JAMAIS les fichiers.
+- Tu ne lances AUCUNE commande.
+- Tu réponds en français, en phrases courtes.</pre>
+
+  <p>D&eacute;composons le <em>frontmatter</em> (entre les <code class="inline">---</code>)&nbsp;:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Champ</th><th>R&ocirc;le</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">description</code></td><td>Ce que l'agent fait. <strong>Essentiel pour les subagents</strong>&nbsp;: c'est ce que le mod&egrave;le lit pour choisir de le lancer.</td></tr>
+        <tr><td><code class="inline">mode</code></td><td><code class="inline">primary</code>, <code class="inline">subagent</code> ou <code class="inline">all</code>.</td></tr>
+        <tr><td><code class="inline">model</code></td><td>Mod&egrave;le au format <code class="inline">provider/modèle</code>, avec un variant optionnel apr&egrave;s <code class="inline">#</code>.</td></tr>
+        <tr><td><code class="inline">permissions</code></td><td>La liste ordonn&eacute;e de r&egrave;gles vue au chapitre&nbsp;11.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ol class="steps" start="3">
+    <li><strong>Utiliser l'agent.</strong> Comme il est <code class="inline">subagent</code>, on le lance depuis
+    l'agent principal&nbsp;:</li>
+  </ol>
+  <pre data-file="dans OpenCode" data-lang="text">Utilise le subagent reviewer pour relire mes changements actuels.</pre>
+
+  <h2>Faire de l'agent le principal (default_agent)</h2>
+  <p>Pour qu'il d&eacute;marre par d&eacute;faut, on le d&eacute;clare <code class="inline">primary</code> et on le nomme
+  comme agent par d&eacute;faut&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "default_agent": "reviewer"
+}</pre>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Attention</div>
+    <p style="margin:0">L'agent par d&eacute;faut doit exister, &ecirc;tre visible et supporter le mode principal.
+    Sinon OpenCode retombe sur <code class="inline">build</code>.</p>
+  </div>
+
+  <h2>La variante JSON (m&ecirc;me agent, dans la config)</h2>
+  <p>On peut tout d&eacute;finir dans <code class="inline">opencode.jsonc</code> sous <code class="inline">agents</code>&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "agents": {
+    "explicateur": {
+      "description": "Explique le code sans jamais le modifier",
+      "mode": "subagent",
+      "system": "Explique le code demandé avec des exemples courts. N'édite aucun fichier.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" }
+      ]
+    }
+  }
+}</pre>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Fichier ou JSON&nbsp;?</div>
+    <p style="margin:0">Les <strong>fichiers Markdown</strong> sont plus confortables pour &eacute;crire un long
+    prompt (le corps du fichier). Le <strong>JSON</strong> est pratique pour de petits agents ou pour tout
+    regrouper. Choisis selon ton confort&nbsp;; les deux se m&eacute;langent.</p>
+  </div>
+
+  <h2>Trois id&eacute;es d'agents &agrave; recopier</h2>
+  <div class="grid three">
+    <div class="mini"><h5>&#128221; R&eacute;dacteur de doc</h5><p>Lit le code et produit un README clair. Acc&egrave;s&nbsp;: lecture seule + &eacute;criture limit&eacute;e aux <code class="inline">*.md</code>.</p></div>
+    <div class="mini"><h5>&#129514; Testeur</h5><p>G&eacute;n&egrave;re des tests pour un fichier donn&eacute;. Acc&egrave;s&nbsp;: lecture + &eacute;criture dans <code class="inline">tests/</code>.</p></div>
+    <div class="mini"><h5>&#128270; Explorateur</h5><p>R&eacute;sume l'architecture d'un dossier. Acc&egrave;s&nbsp;: lecture seule, mode subagent.</p></div>
+  </div>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128680;</span>Erreur fr&eacute;quente</div>
+    <p style="margin:0">Un frontmatter mal indent&eacute; (YAML sensible aux espaces) emp&ecirc;che l'agent de se charger.
+    Si ton agent n'appara&icirc;t pas&nbsp;: v&eacute;rifie l'orthographe de <code class="inline">permissions</code>,
+    l'indentation, et que le fichier finit bien par <code class="inline">.md</code>.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cr&eacute;e <code class="inline">~/.config/opencode/agents/reviewer.md</code> avec le contenu ci-dessus.</li>
+      <li>Relance OpenCode (ou red&eacute;marre le service&nbsp;: <code class="inline">opencode service restart</code>).</li>
+      <li>Demande &agrave; l'agent principal d'utiliser <code class="inline">reviewer</code> sur un fichier modifi&eacute;.</li>
+      <li>V&eacute;rifie qu'il refuse bien d'&eacute;diter&nbsp;: demande-lui de corriger un bug&hellip; il doit r&eacute;pondre qu'il ne modifie pas.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un agent = un fichier <code class="inline">.md</code> dans <code class="inline">~/.config/opencode/agents/</code> ou <code class="inline">.opencode/agents/</code>.</li>
+      <li>Le frontmatter d&eacute;finit <code class="inline">description</code>, <code class="inline">mode</code>, <code class="inline">model</code>, <code class="inline">permissions</code>&nbsp;;
+      le corps Markdown devient le prompt syst&egrave;me.</li>
+      <li><code class="inline">default_agent</code> choisit l'agent de d&eacute;part.</li>
+      <li>M&ecirc;me agent d&eacute;finissable en JSON sous <code class="inline">agents</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 13 · TROUVER ET INTÉGRER DES AGENTS                              -->
+<!-- ================================================================ -->
+<section class="page" id="trouver-agents" data-module="Module 4 &middot; Les agents"
+         data-num="13" data-title="Trouver &amp; int&eacute;grer des agents">
+  <span class="kicker">Module 4 &middot; Les agents</span>
+  <h1>Trouver &amp; int&eacute;grer des agents</h1>
+  <p class="lead">Pas besoin de tout &eacute;crire soi-m&ecirc;me. La communaut&eacute; partage des agents pr&ecirc;ts &agrave; l'emploi.
+  Voici o&ugrave; les trouver, comment les int&eacute;grer proprement, et surtout comment v&eacute;rifier ce que tu
+  installes.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Savoir chercher un agent, l'installer dans le bon dossier, et l'adapter &agrave; ton projet.</p>
+  </div>
+
+  <h2>O&ugrave; trouver des agents</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Source</th><th>Ce qu'on y trouve</th></tr></thead>
+      <tbody>
+        <tr><td><strong>D&eacute;p&ocirc;ts GitHub &laquo;&nbsp;awesome&nbsp;&raquo;</strong></td><td>Listes d'agents et de configurations OpenCode partag&eacute;es</td></tr>
+        <tr><td><strong>Le d&eacute;p&ocirc;t officiel OpenCode</strong></td><td>Exemples et int&eacute;grations de r&eacute;f&eacute;rence</td></tr>
+        <tr><td><strong>Les communaut&eacute;s (Discord, forums)</strong></td><td>Agents sp&eacute;cialis&eacute;s par m&eacute;tier</td></tr>
+        <tr><td><strong>Les d&eacute;p&ocirc;ts de ton &eacute;quipe</strong></td><td>Le meilleur endroit&nbsp;: des agents adapt&eacute;s &agrave; <em>ton</em> contexte</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>La source la plus fiable : toi</div>
+    <p style="margin:0">Un agent partag&eacute; est g&eacute;n&eacute;rique. Le plus utile est souvent celui que <strong>tu</strong>
+    &eacute;cris pour <strong>ton</strong> projet. Pars d'un exemple trouv&eacute; en ligne, puis adapte le prompt, les
+    permissions et le mod&egrave;le.</p>
+  </div>
+
+  <h2>Int&eacute;grer un agent en 4 &eacute;tapes</h2>
+  <ol class="steps">
+    <li><strong>R&eacute;cup&eacute;rer le fichier.</strong> C'est un <code class="inline">.md</code> avec un frontmatter.</li>
+  </ol>
+  <pre data-file="terminal" data-lang="bash"># Exemple : récupérer un agent depuis un dépôt (adapte l'URL)
+curl -fsSL -o ~/.config/opencode/agents/mon-agent.md \
+  https://exemple.com/agents/mon-agent.md</pre>
+  <ol class="steps" start="2">
+    <li><strong>Le placer au bon endroit.</strong> Global pour tous tes projets, ou projet pour une &eacute;quipe.</li>
+    <li><strong>Relire et adapter.</strong> V&eacute;rifie le mod&egrave;le (mets un mod&egrave;le que tu as connect&eacute;),
+    et les permissions (n'importe qui peut lancer un <code class="inline">shell</code>&nbsp;?).</li>
+    <li><strong>Tester.</strong> Relance OpenCode et v&eacute;rifie que l'agent appara&icirc;t et se comporte comme pr&eacute;vu.</li>
+  </ol>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>S&eacute;curit&eacute; : un agent est du code</div>
+    <p>Un agent malveillant peut demander &agrave; lancer des commandes ou &agrave; lire des fichiers sensibles.
+    <strong>Avant d'installer un agent t&eacute;l&eacute;charg&eacute;, lis-le</strong>&nbsp;: que fait le prompt&nbsp;?
+    Quelles permissions&nbsp;?</p>
+    <ul style="margin-bottom:0">
+      <li>Refuse tout agent qui demande <code class="inline">shell: *</code> sans raison claire.</li>
+      <li>M&eacute;fie-toi d'un agent qui lit <code class="inline">~/.ssh</code>, <code class="inline">.env</code> ou <code class="inline">~/.config</code>.</li>
+      <li>En cas de doute&nbsp;: passe <code class="inline">shell</code> et <code class="inline">edit</code> en <code class="inline">ask</code>.</li>
+    </ul>
+  </div>
+
+  <h2>Adapter un agent &agrave; ton projet</h2>
+  <p>Deux modifications rendent un agent g&eacute;n&eacute;rique imm&eacute;diatement utile&nbsp;:</p>
+  <ul>
+    <li><strong>Le mod&egrave;le</strong>&nbsp;: remplace par un mod&egrave;le que tu as connect&eacute; (gratuit ou local).</li>
+    <li><strong>Le contexte</strong>&nbsp;: ajoute les conventions de ton projet dans le prompt (framework, style, tests).</li>
+  </ul>
+  <pre data-file="~/.config/opencode/agents/reviewer.md (extrait)" data-lang="markdown">---
+description: Relecteur adapté à notre projet React + Vite
+mode: subagent
+model: ollama/qwen3:8b
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+---
+
+Tu connais nos conventions :
+- React 18, Vite, JavaScript (pas de TypeScript).
+- Pas de dépendance ajoutée sans justification.
+- Chaque composant vit dans src/components/.
+
+Relis les changements selon ces règles.</pre>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cherche en ligne <em>&laquo;&nbsp;awesome opencode agents&nbsp;&raquo;</em> et rep&egrave;re un agent qui t'int&eacute;resse.</li>
+      <li>Lis son prompt et ses permissions avant toute chose.</li>
+      <li>Installe-le dans <code class="inline">~/.config/opencode/agents/</code>, puis change le mod&egrave;le pour un mod&egrave;le que tu as connect&eacute;.</li>
+      <li>Teste-le et note ce qui m&eacute;riterait d'&ecirc;tre am&eacute;lior&eacute; dans le prompt.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>On trouve des agents en ligne (GitHub, communaut&eacute;s), mais le meilleur est souvent le tien.</li>
+      <li>Installation&nbsp;: d&eacute;poser un <code class="inline">.md</code> dans <code class="inline">agents/</code>.</li>
+      <li>Toujours <strong>lire avant d'installer</strong>&nbsp;: un agent = du code avec des droits.</li>
+      <li>Adapter le mod&egrave;le et le contexte rend un agent g&eacute;n&eacute;rique vraiment utile.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 14 · LES SKILLS                                                  -->
+<!-- ================================================================ -->
+<section class="page" id="skills" data-module="Module 5 &middot; &Eacute;tendre OpenCode"
+         data-num="14" data-title="Les Skills : des comp&eacute;tences r&eacute;utilisables">
+  <span class="kicker">Module 5 &middot; &Eacute;tendre OpenCode</span>
+  <h1>Les Skills : des comp&eacute;tences r&eacute;utilisables</h1>
+  <p class="lead">Tu r&eacute;p&egrave;tes souvent les m&ecirc;mes consignes &agrave; l'agent&nbsp;? Une <strong>skill</strong> (comp&eacute;tence)
+  est une fiche de consignes rang&eacute;e &agrave; part, qu'OpenCode va chercher <em>tout seul</em> quand le sujet s'y pr&ecirc;te. Tes prompts
+  restent courts, tes consignes ne se perdent plus.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Savoir ce qu'est une skill, o&ugrave; la ranger, comment la rendre d&eacute;couvrable&nbsp;&mdash; et en cr&eacute;er une
+    de bout en bout.</p>
+  </div>
+
+  <h2>Le probl&egrave;me qu'elles r&eacute;solvent</h2>
+  <p>Sans skill, tu r&eacute;&eacute;cris les m&ecirc;mes consignes ou tu les entasses dans le prompt syst&egrave;me. R&eacute;sultat&nbsp;:
+  un prompt &eacute;norme, charg&eacute; &agrave; chaque message, m&ecirc;me quand ce n'est pas utile.</p>
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#127858;</span>Une recette de cuisine</div>
+    <p style="margin:0">Tu n'apprends pas par c&oelig;ur toutes tes recettes. Tu les ranges dans un classeur et tu sors
+    <em>la bonne fiche</em> au moment de cuisiner. Une skill, c'est &ccedil;a&nbsp;: une fiche de consignes rang&eacute;e &agrave; part.
+    Un mod&egrave;le lit cette fiche <strong>uniquement quand il en a besoin</strong>, ce qui &eacute;conomise du contexte (et de l'argent).</p>
+  </div>
+
+  <h2>Anatomie d'une skill</h2>
+  <p>Une skill, c'est un dossier avec un fichier <code class="inline">SKILL.md</code>, entour&eacute; de ses fichiers utiles
+  (scripts, mod&egrave;les, r&eacute;f&eacute;rences).</p>
+  <pre data-file="Arborescence" data-lang="text">.opencode/skills/
+&#9492;&#9472;&#9472; git-release/
+    &#9500;&#9472;&#9472; SKILL.md
+    &#9500;&#9472;&#9472; scripts/
+    &#9474;   &#9492;&#9472;&#9472; changelog.ts
+    &#9492;&#9472;&#9472; references/
+        &#9492;&#9472;&#9472; release-policy.md</pre>
+  <p>Dans <code class="inline">SKILL.md</code>, on d&eacute;crit <em>quand</em> utiliser la skill, puis <em>comment</em> proc&eacute;der.
+  Les chemins &eacute;crits &agrave; l'int&eacute;rieur sont relatifs au dossier contenant <code class="inline">SKILL.md</code>&nbsp;:
+  la skill reste autonome, o&ugrave; qu'on la copie.</p>
+
+  <h2>Un exemple complet</h2>
+  <pre data-file=".opencode/skills/git-release/SKILL.md" data-lang="markdown">---
+name: Release
+description: Préparer une release (notes, version, tag)
+---
+
+## Marche à suivre
+1. Lis references/release-policy.md.
+2. Résume les changements mergés depuis le dernier tag.
+3. Propose le num&eacute;ro de version AVANT de modifier le moindre fichier.
+4. Lance scripts/changelog.ts seulement après validation.</pre>
+  <p>Le <strong>frontmatter</strong> (entre les <code class="inline">---</code>) sert &agrave; nommer la skill et &agrave; dire
+  au mod&egrave;le <em>quand elle est pertinente</em>. Le corps Markdown, lui, devient les instructions charg&eacute;es le moment venu.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Champ du frontmatter</th><th>R&ocirc;le</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">name</code></td><td>Nom affich&eacute;. Par d&eacute;faut, c'est l'identifiant tir&eacute; du chemin.</td></tr>
+        <tr><td><code class="inline">description</code></td><td>Le texte qui permet au mod&egrave;le de <strong>d&eacute;couvrir</strong> la skill. Sans description, elle n'est pas propos&eacute;e automatiquement.</td></tr>
+        <tr><td><code class="inline">metadata.opencode/autoinvoke</code></td><td>Mis &agrave; <code class="inline">false</code>, la skill reste disponible mais n'est plus sugg&eacute;r&eacute;e au mod&egrave;le.</td></tr>
+        <tr><td><code class="inline">disable-model-invocation</code></td><td><code class="inline">true</code>&nbsp;: m&ecirc;me effet que ci-dessus.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>O&ugrave; OpenCode les cherche (automatiquement)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Port&eacute;e</th><th>Emplacements</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Global</strong></td><td><code class="inline">~/.config/opencode/skills</code></td></tr>
+        <tr><td>Global (compatibilit&eacute;)</td><td><code class="inline">~/.claude/skills</code>, <code class="inline">~/.agents/skills</code></td></tr>
+        <tr><td><strong>Projet</strong></td><td><code class="inline">.opencode/skills</code></td></tr>
+        <tr><td>Projet (compatibilit&eacute;)</td><td><code class="inline">.claude/skills</code>, <code class="inline">.agents/skills</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Deux formes de fichier sont accept&eacute;es&nbsp;: un simple <code class="inline">.md</code> &agrave; la racine de la source
+  (ex. <code class="inline">skills/review.md</code>), ou un dossier contenant un fichier nomm&eacute; exactement
+  <code class="inline">SKILL.md</code>.</p>
+
+  <h2>L'identifiant (ID), une r&egrave;gle &agrave; retenir</h2>
+  <p><strong>C'est le chemin du fichier qui d&eacute;finit l'ID</strong>, pas le <code class="inline">name</code> du frontmatter.
+  L'ID est sensible &agrave; la casse.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Fichier</th><th>ID</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">&lt;source&gt;/git-release.md</code></td><td><code class="inline">git-release</code></td></tr>
+        <tr><td><code class="inline">&lt;source&gt;/git-release/SKILL.md</code></td><td><code class="inline">git-release</code></td></tr>
+        <tr><td><code class="inline">&lt;source&gt;/release/SKILL.md</code></td><td><code class="inline">release</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Le pi&egrave;ge classique</div>
+    <p style="margin:0">Une skill rang&eacute;e dans <code class="inline">.opencode/skills/release/SKILL.md</code> a l'ID
+    <strong>release</strong>, m&ecirc;me si son <code class="inline">name</code> vaut &laquo;&nbsp;Git Release&nbsp;&raquo;. Pour l'appeler
+    &agrave; la main, c'est <code class="inline">@release</code> &mdash; pas <code class="inline">@Git Release</code>.</p>
+  </div>
+
+  <h2>Qui gagne en cas de doublon&nbsp;?</h2>
+  <p>Si deux sources d&eacute;finissent le m&ecirc;me ID, c'est la source enregistr&eacute;e <strong>en dernier</strong> qui l'emporte.
+  En pratique, un fichier de projet &eacute;crase le fichier global du m&ecirc;me nom&nbsp;:</p>
+  <pre data-file="pr&eacute;c&eacute;dence" data-lang="text">~/.config/opencode/skills/git-release/SKILL.md   &#8592; priorit&eacute; basse
+.opencode/skills/git-release/SKILL.md            &#8592; charg&eacute;e</pre>
+
+  <h2>Ajouter d'autres sources (locales ou HTTP)</h2>
+  <p>Pour partager des skills d'&eacute;quipe, on d&eacute;clare des dossiers ou des catalogues HTTP dans le tableau
+  <code class="inline">skills</code>&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "$schema": "https://opencode.ai/config.json",
+  "skills": [
+    "./team-skills",
+    "~/shared/opencode-skills",
+    "https://exemple.com/opencode/skills/"
+  ]
+}</pre>
+  <p>Un chemin relatif part du dossier de travail, pas du fichier de config. Une URL charge un <em>catalogue</em>&nbsp;: un
+  <code class="inline">index.json</code> qui liste les skills disponibles. Les tableaux <code class="inline">skills</code> de tous
+  les fichiers de config se cumulent.</p>
+
+  <h2>Contr&ocirc;ler qui peut charger quoi</h2>
+  <p>Comme pour les autres outils, on utilise une permission. C'est <strong>l'ID de la skill</strong> qui sert de ressource&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "permissions": [
+    { "action": "skill", "resource": "*",           "effect": "allow" },
+    { "action": "skill", "resource": "internal-*",  "effect": "deny" },
+    { "action": "skill", "resource": "experimental-*", "effect": "ask" }
+  ]
+}</pre>
+  <p>La derni&egrave;re r&egrave;gle qui correspond gagne. <code class="inline">deny</code> masque m&ecirc;me la skill au mod&egrave;le&nbsp;;
+  <code class="inline">ask</code> demande ton accord avant de la charger.</p>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cr&eacute;e le dossier <code class="inline">.opencode/skills/mes-conventions/</code> dans un projet.</li>
+      <li>Ajoute un fichier <code class="inline">SKILL.md</code> avec un <code class="inline">name</code>, une <code class="inline">description</code>, et 3&nbsp;r&egrave;gles de ton &eacute;quipe (indentation, tests, nommage).</li>
+      <li>Relance OpenCode, puis demande quelque chose qui touche au sujet de la skill&nbsp;: elle doit &ecirc;tre propos&eacute;e.</li>
+      <li>Appelle-la explicitement avec <code class="inline">@mes-conventions</code> et v&eacute;rifie qu'elle se charge.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Une skill = un dossier avec <code class="inline">SKILL.md</code> (ou un <code class="inline">.md</code> racine).</li>
+      <li>La <code class="inline">description</code> sert &agrave; la <strong>d&eacute;couvrir automatiquement</strong>.</li>
+      <li>L'<strong>ID vient du chemin</strong>, pas du <code class="inline">name</code>&nbsp;; il est sensible &agrave; la casse.</li>
+      <li>Chargement &agrave; la demande&nbsp;: <code class="inline">@id</code>, ou via l'outil <code class="inline">skill</code>.</li>
+      <li>Permission <code class="inline">skill</code> pour autoriser, demander ou bloquer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 15 · LES PLUGINS                                                 -->
+<!-- ================================================================ -->
+<section class="page" id="plugins" data-module="Module 5 &middot; &Eacute;tendre OpenCode"
+         data-num="15" data-title="Les plugins : brancher des outils">
+  <span class="kicker">Module 5 &middot; &Eacute;tendre OpenCode</span>
+  <h1>Les plugins : brancher des outils</h1>
+  <p class="lead">Un plugin ajoute des <strong>outils</strong>, des <strong>hooks</strong> et des int&eacute;grations &agrave; OpenCode.
+  C'est la mani&egrave;re la plus puissante d'&eacute;tendre l'assistant&nbsp;: on branche un paquet npm ou un petit fichier
+  TypeScript, et OpenCode gagne une nouvelle capacit&eacute;.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Comprendre &agrave; quoi sert un plugin, savoir en installer un avec la CLI, et conna&icirc;tre les dossiers
+    de d&eacute;couverte automatique.</p>
+  </div>
+
+  <h2>Plugin ou skill&nbsp;?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th></th><th>Skill</th><th>Plugin</th></tr></thead>
+      <tbody>
+        <tr><td><strong>C'est&hellip;</strong></td><td>Des consignes (du texte)</td><td>Du code qui ajoute des capacit&eacute;s</td></tr>
+        <tr><td><strong>&Ccedil;a sert &agrave;&hellip;</strong></td><td>Guider l'agent sur une m&eacute;thode</td><td>Ajouter un outil, un hook, une int&eacute;gration</td></tr>
+        <tr><td><strong>Difficult&eacute;</strong></td><td>Facile (Markdown)</td><td>Moyenne &agrave; avanc&eacute;e (TypeScript)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128268;</span>La prise multiple</div>
+    <p style="margin:0">La skill explique <em>comment</em> faire les choses. Le plugin branche un <em>nouvel appareil</em> sur la
+    prise&nbsp;: une connexion &agrave; un service, une commande sp&eacute;ciale, un &eacute;v&eacute;nement d&eacute;clench&eacute; au bon moment.
+    On installe d'abord, on code ensuite&nbsp;&mdash; et seulement si le besoin existe.</p>
+  </div>
+
+  <h2>Installer un plugin avec la CLI</h2>
+  <p>Le plus simple&nbsp;: on ajoute un paquet publi&eacute; sur npm. OpenCode l'installe et l'enregistre pour toi.</p>
+  <pre data-file="terminal" data-lang="bash"># Ajouter un plugin (avec ou sans version / tag)
+opencode plugin add opencode-acme-plugin
+opencode plugin add opencode-acme-plugin@1.2.0
+opencode plugin add @acme/opencode-plugin@latest
+
+# Voir, vérifier, mettre à jour, retirer
+opencode plugin list
+opencode plugin list --builtin
+opencode plugin check
+opencode plugin update
+opencode plugin remove opencode-acme-plugin@1.2.0</pre>
+  <p>Les d&eacute;p&ocirc;ts Git sont aussi accept&eacute;s (branches, tags, commits complets), y compris priv&eacute;s via tes
+  identifiants Git.</p>
+
+  <h2>Ce que la CLI &eacute;crit dans la config</h2>
+  <p>Un plugin ajout&eacute; finit dans le tableau <code class="inline">plugins</code>. Tu peux aussi l'y mettre &agrave; la main,
+  avec des options&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "$schema": "https://opencode.ai/config.json",
+  "plugins": [
+    "opencode-acme-plugin@1.2.0",
+    "./plugins/local",
+    {
+      "package": "@acme/opencode-plugin",
+      "options": { "agent": "reviewer", "strict": true }
+    }
+  ]
+}</pre>
+  <p>Les chemins relatifs se r&eacute;sorbent depuis le fichier de config qui les contient. Les tableaux de plusieurs fichiers
+  se cumulent, du moins prioritaire au plus prioritaire.</p>
+
+  <h2>D&eacute;couverte automatique</h2>
+  <p>Aucune config n'est n&eacute;cessaire pour un plugin pos&eacute; dans un dossier <code class="inline">.opencode/plugins/</code>&nbsp;:
+  OpenCode charge directement les fichiers <code class="inline">.ts</code>/<code class="inline">.js</code> et les dossiers de paquets.</p>
+  <pre data-file="Arborescence" data-lang="text">.opencode/
+&#9492;&#9472;&#9472; plugins/
+    &#9500;&#9472;&#9472; concise.ts
+    &#9500;&#9472;&#9472; reviewer.js
+    &#9492;&#9472;&#9472; acme-package/</pre>
+  <p>Les plugins globaux suivent le m&ecirc;me sch&eacute;ma sous <code class="inline">~/.config/opencode/plugins/</code>.</p>
+  <div class="box warn">
+    <div class="box-title"><span class="ico">&#9888;&#65039;</span>Un pi&egrave;ge de d&eacute;couverte</div>
+    <p style="margin:0">Un dossier <code class="inline">plugins/</code> pos&eacute; &agrave; c&ocirc;t&eacute; d'un
+    <code class="inline">opencode.json</code> &agrave; la racine du projet n'est <strong>pas</strong> d&eacute;tect&eacute; tout seul.
+    D&eacute;place-le sous <code class="inline">.opencode/</code>, ou d&eacute;clare-le explicitement dans <code class="inline">plugins</code>.</p>
+  </div>
+
+  <h2>Activer, d&eacute;sactiver, ordonner</h2>
+  <p>Les entr&eacute;es sont trait&eacute;es dans l'ordre. Un <code class="inline">-</code> d&eacute;sactive, <code class="inline">*</code> vise
+  tout le monde, et <code class="inline">.*</code> matche un pr&eacute;fixe d'ID. Un ID cit&eacute; plus tard r&eacute;active un plugin.</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "plugins": ["*", "-opencode.provider.*", "opencode.provider.openai", "-acme.reviewer"]
+}</pre>
+
+  <h2>Plugins de terminal (TUI)</h2>
+  <p>Certains plugins ne concernent que l'interface du terminal. Ils se configurent s&eacute;par&eacute;ment, dans
+  <code class="inline">cli.json</code>, et restent actifs m&ecirc;me connect&eacute; &agrave; un serveur distant&nbsp;:</p>
+  <pre data-file="cli.json" data-lang="json">{
+  "plugins": ["opencode-acme-cli"]
+}</pre>
+
+  <h2>Recharger apr&egrave;s un changement</h2>
+  <p>Les fichiers de config surveill&eacute;s se rechargent tout seuls. Si tu modifies une d&eacute;pendance locale non surveill&eacute;e,
+  red&eacute;marre le service&nbsp;:</p>
+  <pre data-file="terminal" data-lang="bash">opencode service restart</pre>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>Un plugin est du code ex&eacute;cut&eacute;</div>
+    <p style="margin:0">Un plugin tourne avec tes droits&nbsp;: il peut lire des fichiers, faire des requ&ecirc;tes r&eacute;seau, lancer
+    des processus. N'installe que des paquets de confiance, &eacute;pingl&eacute;s sur une version pr&eacute;cise, et relis un plugin local
+    avant de le charger.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Lance <code class="inline">opencode plugin list</code> pour voir ce qui est d&eacute;j&agrave; charg&eacute;.</li>
+      <li>Ajoute un plugin avec <code class="inline">opencode plugin add &lt;paquet&gt;</code>, puis v&eacute;rifie-le avec
+      <code class="inline">opencode plugin list</code>.</li>
+      <li>Ouvre le <code class="inline">opencode.json</code> modifi&eacute; et rep&egrave;re l'entr&eacute;e ajout&eacute;e dans
+      <code class="inline">plugins</code>.</li>
+      <li>Retire-le avec <code class="inline">opencode plugin remove &lt;paquet&gt;</code>.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un plugin = du <strong>code</strong> qui ajoute des capacit&eacute;s (outils, hooks, int&eacute;grations).</li>
+      <li>Installation CLI&nbsp;: <code class="inline">opencode plugin add / list / update / remove</code>.</li>
+      <li>D&eacute;couverte auto dans <code class="inline">.opencode/plugins/</code> et <code class="inline">~/.config/opencode/plugins/</code>.</li>
+      <li><code class="inline">-</code> d&eacute;sactive, <code class="inline">*</code> vise tout, <code class="inline">.*</code> un pr&eacute;fixe.</li>
+      <li>Plugins TUI &agrave; part, dans <code class="inline">cli.json</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 16 · LES COMMANDES                                               -->
+<!-- ================================================================ -->
+<section class="page" id="commandes" data-module="Module 5 &middot; &Eacute;tendre OpenCode"
+         data-num="16" data-title="Les commandes : tes raccourcis">
+  <span class="kicker">Module 5 &middot; &Eacute;tendre OpenCode</span>
+  <h1>Les commandes : tes raccourcis</h1>
+  <p class="lead">Une commande transforme un prompt que tu r&eacute;p&egrave;tes en un simple <code class="inline">/mot</code>.
+  Tu &eacute;cris la consigne <strong>une fois</strong> dans un fichier, et tu la d&eacute;clenches en une frappe. Id&eacute;al pour
+  standardiser une fa&ccedil;on de travailler.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Cr&eacute;er une commande Markdown, utiliser les arguments (<code class="inline">$ARGUMENTS</code>,
+    <code class="inline">$1</code>&hellip;), ins&eacute;rer la sortie d'une commande shell, et choisir l'agent ou le mod&egrave;le.</p>
+  </div>
+
+  <h2>La commande la plus simple</h2>
+  <p>Un fichier Markdown dans <code class="inline">.opencode/commands/</code> devient une commande portant le nom du fichier.</p>
+  <pre data-file=".opencode/commands/review.md" data-lang="markdown">Review $ARGUMENTS for bugs and missing tests.</pre>
+  <p>Tu tapes&nbsp;:</p>
+  <pre data-file="dans OpenCode" data-lang="text">/review src/auth.ts</pre>
+  <p>OpenCode envoie au mod&egrave;le&nbsp;: <em>&laquo;&nbsp;Review src/auth.ts for bugs and missing tests.&nbsp;&raquo;</em>
+  Le texte que tu tapes apr&egrave;s la commande remplace <code class="inline">$ARGUMENTS</code>.</p>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#9000;&#65039;</span>Un mod&egrave;le de lettre</div>
+    <p style="margin:0">Une commande, c'est un mod&egrave;le avec des trous. Tu remplis les trous
+    (<code class="inline">$ARGUMENTS</code>, <code class="inline">$1</code>, <code class="inline">$2</code>) et le courrier est pr&ecirc;t.
+    Au lieu de r&eacute;&eacute;crire toute la demande, tu ne fournis que la partie variable.</p>
+  </div>
+
+  <h2>O&ugrave; ranger ses commandes</h2>
+  <pre data-file="emplacements" data-lang="text">~/.config/opencode/commands/review.md   &#8592; globale (tous tes projets)
+.opencode/commands/review.md            &#8592; projet (prioritaire)</pre>
+  <p>Un sous-dossier devient un pr&eacute;fixe s&eacute;par&eacute; par <code class="inline">/</code>&nbsp;:
+  <code class="inline">.opencode/commands/team/review.md</code> s'appelle <code class="inline">/team/review</code>.
+  Un fichier de projet remplace une commande globale du m&ecirc;me nom.</p>
+
+  <h2>Les arguments&nbsp;: $ARGUMENTS, $1, $2&hellip;</h2>
+  <pre data-file=".opencode/commands/check.md" data-lang="markdown">Check $1. Focus on $2.</pre>
+  <p>Pour <code class="inline">/check src/auth.ts "error handling"</code>&nbsp;: <code class="inline">$1</code> vaut
+  <code class="inline">src/auth.ts</code> et <code class="inline">$2</code> vaut <code class="inline">error handling</code>.
+  Les guillemets regroupent plusieurs mots. Le plus grand num&eacute;ro utilis&eacute; avale le reste de la ligne.</p>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Sans placeholder, le texte est ajout&eacute; &agrave; la fin</div>
+    <p style="margin:0">Si le mod&egrave;le n'a ni <code class="inline">$ARGUMENTS</code> ni <code class="inline">$1</code>, OpenCode
+    colle simplement ce que tu tapes apr&egrave;s la commande, &agrave; la suite du prompt.</p>
+  </div>
+
+  <h2>Ins&eacute;rer une commande shell</h2>
+  <p>Un bloc entre <code class="inline">!</code> et backticks ex&eacute;cute une commande et injecte sa sortie avant l'envoi&nbsp;:</p>
+  <pre data-file=".opencode/commands/review-diff.md" data-lang="markdown">Review this diff:
+
+!`git diff --stat &amp;&amp; git diff`</pre>
+  <p>Les placeholders sont remplac&eacute;s d'abord&nbsp;: dans <code class="inline">git log --oneline -$1</code>, un
+  <code class="inline">/history 5</code> donne bien <code class="inline">git log --oneline -5</code>.</p>
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>Bloc shell = ex&eacute;cution imm&eacute;diate</div>
+    <p style="margin:0">Un bloc <code class="inline">!&hellip;</code> s'ex&eacute;cute quand OpenCode &eacute;value la commande,
+    <strong>en dehors du syst&egrave;me de permissions des outils</strong>. N'utilise que des commandes de sources fiables et
+    ne place jamais un argument non v&eacute;rifi&eacute; dans un bloc shell.</p>
+  </div>
+
+  <h2>Choisir l'agent, le mod&egrave;le, l'ex&eacute;cution</h2>
+  <p>Le frontmatter permet de piloter comment la commande s'ex&eacute;cute&nbsp;:</p>
+  <pre data-file=".opencode/commands/design.md" data-lang="markdown">---
+description: Concevoir une solution
+agent: plan
+model: openai/gpt-5#high
+subagent: true
+---
+
+Design $ARGUMENTS.</pre>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Champ</th><th>Effet</th></tr></thead>
+      <tbody>
+        <tr><td><code class="inline">description</code></td><td>Texte affich&eacute; dans la liste des commandes.</td></tr>
+        <tr><td><code class="inline">agent</code></td><td>Agent utilis&eacute; quand la commande s'ex&eacute;cute.</td></tr>
+        <tr><td><code class="inline">model</code></td><td>Mod&egrave;le forc&eacute;, au format <code class="inline">provider/model</code> (et <code class="inline">#variant</code>).</td></tr>
+        <tr><td><code class="inline">subagent</code></td><td><code class="inline">true</code>&nbsp;: ex&eacute;cution en session enfant (en arri&egrave;re-plan).</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Ordre de priorit&eacute; du mod&egrave;le&nbsp;: le <code class="inline">model</code> de la commande gagne&nbsp;; sinon celui de
+  l'agent&nbsp;; sinon le mod&egrave;le de la session courante.</p>
+
+  <h2>La forme JSON</h2>
+  <p>Une commande peut aussi se d&eacute;finir dans la configuration, sous <code class="inline">commands</code> (le
+  <code class="inline">template</code> est alors obligatoire)&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "commands": {
+    "audit": {
+      "template": "Audit $ARGUMENTS.",
+      "agent": "general",
+      "subagent": true
+    }
+  }
+}</pre>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Cr&eacute;e <code class="inline">.opencode/commands/explique.md</code> contenant&nbsp;: <em>Explique ce code simplement&nbsp;: $ARGUMENTS</em>.</li>
+      <li>Utilise-la&nbsp;: <code class="inline">/explique src/app.js</code>.</li>
+      <li>Cr&eacute;e une deuxi&egrave;me commande <code class="inline">resume-diff.md</code> avec un bloc shell
+      <code class="inline">!`git diff --stat`</code>.</li>
+      <li>Ajoute <code class="inline">agent: plan</code> au frontmatter et observe le changement de comportement.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Une commande = un fichier <code class="inline">.md</code> dans <code class="inline">.opencode/commands/</code> ou <code class="inline">~/.config/opencode/commands/</code>.</li>
+      <li>On d&eacute;clenche avec <code class="inline">/nom</code>&nbsp;; le sous-dossier devient un pr&eacute;fixe.</li>
+      <li>Arguments&nbsp;: <code class="inline">$ARGUMENTS</code> (tout), <code class="inline">$1</code>, <code class="inline">$2</code>&hellip; (positionnels).</li>
+      <li>Bloc <code class="inline">!`cmd`</code>&nbsp;: injecte une sortie shell (attention, ex&eacute;cution imm&eacute;diate).</li>
+      <li>Frontmatter&nbsp;: <code class="inline">agent</code>, <code class="inline">model</code>, <code class="inline">subagent</code>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 17 · LES SERVEURS MCP                                            -->
+<!-- ================================================================ -->
+<section class="page" id="mcp" data-module="Module 5 &middot; &Eacute;tendre OpenCode"
+         data-num="17" data-title="Les serveurs MCP : connecter le monde">
+  <span class="kicker">Module 5 &middot; &Eacute;tendre OpenCode</span>
+  <h1>Les serveurs MCP : connecter le monde</h1>
+  <p class="lead"><strong>MCP</strong> (Model Context Protocol) est un standard qui permet &agrave; OpenCode de parler &agrave; des
+  services externes&nbsp;: une base de donn&eacute;es, une API, un CRM, la documentation d'une librairie. C'est la pi&egrave;ce qui
+  transforme l'assistant en outil branch&eacute; sur <em>ton</em> syst&egrave;me d'information.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Comprendre ce qu'est un serveur MCP, ajouter un serveur distant ou local, g&eacute;rer
+    l'authentification, et savoir o&ugrave; mettre un serveur. En clair&nbsp;: MCP = prise universelle entre l'IA et tes outils.</p>
+  </div>
+
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128268;</span>La prise USB-C universelle</div>
+    <p style="margin:0">Avant l'USB-C, chaque appareil avait son connecteur. MCP joue ce r&ocirc;le pour l'IA&nbsp;: un
+    <strong>seul standard</strong>, et n'importe quel outil qui parle MCP peut &ecirc;tre branch&eacute; &agrave; l'assistant. Un serveur MCP
+    expose des <strong>outils</strong>, des <strong>ressources</strong> et des <strong>invites</strong> que l'agent peut utiliser.</p>
+  </div>
+
+  <h2>Distant ou local&nbsp;?</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Type</th><th>Comment &ccedil;a marche</th><th>Exemple</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Distant</strong> (<code class="inline">remote</code>)</td><td>Un service joignable par URL (HTTP Streamable), souvent avec OAuth</td><td>Context7 (doc &agrave; jour), Sentry</td></tr>
+        <tr><td><strong>Local</strong> (<code class="inline">local</code>)</td><td>Un programme qu'OpenCode lance sur ta machine, via stdio</td><td>Un serveur de fichiers, un connecteur maison</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Ajouter un serveur avec la CLI</h2>
+  <p>Le plus simple&nbsp;: la commande <code class="inline">mcp add</code>. Elle &eacute;crit le serveur dans la config du projet
+  courant&nbsp;; ajoute <code class="inline">--global</code> pour qu'il soit disponible partout.</p>
+  <pre data-file="terminal" data-lang="bash"># Serveur distant (Context7 : documentation technique à jour)
+opencode mcp add context7 --url https://mcp.context7.com/mcp
+
+# Le rendre global (tous les projets)
+opencode mcp add context7 --global --url https://mcp.context7.com/mcp
+
+# Serveur local : une commande après --
+opencode mcp add everything -- npx -y @modelcontextprotocol/server-everything
+
+# Vérifier l'état des connexions
+opencode mcp list</pre>
+  <p>Un serveur connect&eacute; appara&icirc;t en vert&nbsp;: <code class="inline">&#10003; context7&nbsp;&nbsp;connected</code>.</p>
+
+  <h2>Authentification (OAuth)</h2>
+  <p>Les serveurs distants utilisent OAuth par d&eacute;faut. Si la liste affiche
+  <code class="inline">needs authentication</code>&nbsp;:</p>
+  <ol class="steps">
+    <li>Dans OpenCode, tape <code class="inline">/mcps</code> pour ouvrir la liste des serveurs.</li>
+    <li>S&eacute;lectionne le serveur&nbsp;: le navigateur s'ouvre pour te connecter.</li>
+    <li>Reviens dans OpenCode&nbsp;: le serveur passe &agrave; <code class="inline">connected</code>.</li>
+  </ol>
+  <pre data-file="terminal (alternative)" data-lang="bash">opencode mcp auth sentry    # lancer l'autorisation en CLI
+opencode mcp logout sentry  # oublier les identifiants et changer de compte</pre>
+
+  <h2>La configuration &agrave; la main</h2>
+  <p>Pour les options fine (en-t&ecirc;tes, secrets, dossier de travail), on &eacute;crit sous <code class="inline">mcp.servers</code>.
+  Les noms de serveurs ne se placent <strong>jamais</strong> directement sous <code class="inline">mcp</code> en V2&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp",
+        "headers": { "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}" }
+      },
+      "everything": {
+        "type": "local",
+        "command": ["npx", "-y", "@modelcontextprotocol/server-everything"],
+        "cwd": ".",
+        "environment": { "LOG_LEVEL": "info" }
+      }
+    }
+  }
+}</pre>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Jamais de secret en clair</div>
+    <p style="margin:0">Utilise la substitution <code class="inline">{env:NAME}</code> pour les cl&eacute;s. Les expressions shell
+    (<code class="inline">$NAME</code>) ne sont pas &eacute;valu&eacute;es dans les cha&icirc;nes JSON. Pour garder un serveur configur&eacute;
+    mais non connect&eacute;&nbsp;: mets <code class="inline">"disabled": true</code> (il n'y a pas de champ <code class="inline">enabled</code>).</p>
+  </div>
+
+  <h2>Comment les outils s'appellent</h2>
+  <p>Un outil expos&eacute; par un serveur est nomm&eacute; <code class="inline">&lt;serveur&gt;_&lt;outil&gt;</code>. Les caract&egrave;res
+  non alphanum&eacute;riques deviennent des <code class="inline">_</code>&nbsp;:</p>
+  <pre data-file="nommage" data-lang="text">serveur : context7
+outil   : resolve.library/id
+nom     : context7_resolve_library_id</pre>
+  <p>Les invites MCP deviennent des commandes&nbsp;: <code class="inline">/context7:find_docs</code>. Choisis donc des noms de
+  serveurs courts et uniques.</p>
+
+  <h2>Limiter et couper un serveur</h2>
+  <p>On peut masquer ou bloquer des outils sans d&eacute;connecter le serveur, gr&acirc;ce aux permissions sur le nom normalis&eacute;&nbsp;:</p>
+  <pre data-file="opencode.jsonc" data-lang="jsonc">{
+  "permissions": [
+    { "action": "context7_*", "resource": "*", "effect": "deny" }
+  ]
+}</pre>
+  <p>Pour retirer un serveur, supprime son entr&eacute;e de la config o&ugrave; tu l'avais ajout&eacute;.</p>
+
+  <h2>Brancher un outil m&eacute;tier (ex. un CRM)</h2>
+  <p>Le vrai int&eacute;r&ecirc;t en entreprise&nbsp;: exposer <em>tes</em> donn&eacute;es. Une &eacute;quipe &eacute;crit un petit serveur MCP
+  qui interroge le CRM (lire un client, lister les tickets) et l'ajoute &agrave; la config&nbsp;:</p>
+  <pre data-file="opencode.jsonc (extrait)" data-lang="jsonc">{
+  "mcp": {
+    "servers": {
+      "crm": {
+        "type": "local",
+        "command": ["node", "tools/crm-mcp.js"],
+        "environment": { "CRM_TOKEN": "{env:CRM_TOKEN}" }
+      }
+    }
+  }
+}</pre>
+  <p>L'agent peut alors r&eacute;pondre &agrave; &laquo;&nbsp;r&eacute;sume les tickets ouverts du client&nbsp;42&nbsp;&raquo; en appelant
+  vraiment le CRM&nbsp;&mdash; pas en inventant.</p>
+
+  <div class="box danger">
+    <div class="box-title"><span class="ico">&#128274;</span>Le co&ucirc;t cach&eacute; : le contexte</div>
+    <p style="margin:0">Chaque outil MCP consomme du contexte (donc des tokens, donc de l'argent). Ajoute
+    <strong>uniquement les serveurs n&eacute;cessaires</strong>, et d&eacute;sactive ceux que tu n'utilises pas. Un outil qui expose
+    50&nbsp;fonctions gonfle chaque requ&ecirc;te.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Ajoute le serveur Context7&nbsp;: <code class="inline">opencode mcp add context7 --url https://mcp.context7.com/mcp</code>.</li>
+      <li>Lance <code class="inline">opencode mcp list</code> et v&eacute;rifie l'&eacute;tat de la connexion.</li>
+      <li>Dans OpenCode, tape <code class="inline">/mcps</code> et connecte-toi si demand&eacute;.</li>
+      <li>Demande &agrave; l'agent d'utiliser la documentation d'une librairie via Context7, et observe l'appel d'outil.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>MCP = standard pour brancher des outils externes &agrave; l'agent.</li>
+      <li>Deux types&nbsp;: <code class="inline">remote</code> (URL) et <code class="inline">local</code> (commande stdio).</li>
+      <li>CLI&nbsp;: <code class="inline">opencode mcp add / list / auth / logout</code>&nbsp;; dans l'interface&nbsp;: <code class="inline">/mcps</code>.</li>
+      <li>Config sous <code class="inline">mcp.servers</code> (jamais directement sous <code class="inline">mcp</code>).</li>
+      <li>Noms d'outils normalis&eacute;s <code class="inline">&lt;serveur&gt;_&lt;outil&gt;</code>&nbsp;; permissions pour bloquer.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 18 · BIEN PROMPTER + AGENTS.md                                   -->
+<!-- ================================================================ -->
+<section class="page" id="prompter" data-module="Module 6 &middot; Pratique &amp; m&eacute;thode"
+         data-num="18" data-title="Bien prompter &amp; le fichier AGENTS.md">
+  <span class="kicker">Module 6 &middot; Pratique &amp; m&eacute;thode</span>
+  <h1>Bien prompter &amp; le fichier AGENTS.md</h1>
+  <p class="lead">Un bon agent avec un mauvais prompt donne de mauvais r&eacute;sultats. La comp&eacute;tence la plus rentable n'est
+  pas technique&nbsp;: c'est de savoir <strong>demander</strong>. Et il existe un fichier magique qui &eacute;vite de tout r&eacute;p&eacute;ter&nbsp;:
+  <code class="inline">AGENTS.md</code>.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Apprendre une m&eacute;thode de prompt simple et fiable, puis automatiser le contexte du projet avec
+    <code class="inline">AGENTS.md</code> et la commande <code class="inline">/init</code>.</p>
+  </div>
+
+  <h2>La recette d'un bon prompt</h2>
+  <p>Un prompt efficace contient, dans cet ordre&nbsp;:</p>
+  <ol class="steps">
+    <li><strong>Le contexte.</strong> De quoi parle-t-on&nbsp;? (fichier, techno, contrainte).</li>
+    <li><strong>L'objectif.</strong> Que veut-on obtenir&nbsp;? Un r&eacute;sultat observable.</li>
+    <li><strong>Les contraintes.</strong> Ce qu'on interdit ou impose (pas de nouvelle d&eacute;pendance, garder le style&hellip;).</li>
+    <li><strong>Le format attendu.</strong> Un diff, un plan, une liste de fichiers.</li>
+    <li><strong>La demande de plan.</strong> &laquo;&nbsp;Propose d'abord, ex&eacute;cute ensuite.&nbsp;&raquo;</li>
+  </ol>
+  <div class="diagram">  Mauvais   :  "corrige le bug"
+
+  Bon       :  Contexte  : le panier se vide après un rafraîchissement.
+               Objectif  : le panier doit survivre au rechargement.
+               Contrainte: pas de nouvelle dépendance.
+               Format    : montre-moi le plan AVANT de modifier.</div>
+  <div class="box analogy">
+    <div class="box-title"><span class="ico">&#128104;&#8205;&#127891;</span>La commande &agrave; un stagiaire</div>
+    <p style="margin:0">&laquo;&nbsp;Fais le rapport&nbsp;&raquo; donne un mauvais rapport. &laquo;&nbsp;Fais un rapport de 2 pages sur les
+    ventes du trimestre, en comparant &agrave; l'an dernier, avec un tableau, avant vendredi&nbsp;&raquo; donne ce que tu veux.
+    L'IA fonctionne pareil&nbsp;: plus tu pr&eacute;cises, moins tu it&egrave;res.</p>
+  </div>
+
+  <h2>Les 5 r&eacute;flexes qui changent tout</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>R&eacute;flexe</th><th>Pourquoi</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Plan avant action</strong></td><td>L'agent <code class="inline">plan</code> explore sans rien casser&nbsp;; tu valides, puis tu ex&eacute;cutes.</td></tr>
+        <tr><td><strong>Une t&acirc;che &agrave; la fois</strong></td><td>Un prompt = un objectif. Les demandes empil&eacute;es se noient.</td></tr>
+        <tr><td><strong>Donner un exemple</strong></td><td>Montrer le r&eacute;sultat attendu vaut mille explications.</td></tr>
+        <tr><td><strong>Demander la justification</strong></td><td>&laquo;&nbsp;Explique tes choix&nbsp;&raquo; r&eacute;v&egrave;le les erreurs de raisonnement.</td></tr>
+        <tr><td><strong>Corriger, pas repartir</strong></td><td>Pr&eacute;cise ce qui ne va pas&nbsp;: l'agent garde le contexte utile.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>AGENTS.md : le contexte permanent</h2>
+  <p>R&eacute;p&eacute;ter les conventions du projet &agrave; chaque conversation est fatigant. <code class="inline">AGENTS.md</code> est
+  un fichier &agrave; la racine du projet qu'OpenCode lit automatiquement. Il d&eacute;crit <strong>ton</strong> contexte une fois
+  pour toutes.</p>
+  <pre data-file=".opencode/commands (exécuter dans OpenCode)" data-lang="text">/init</pre>
+  <p>La commande <code class="inline">/init</code> analyse le projet et g&eacute;n&egrave;re un <code class="inline">AGENTS.md</code>
+  de d&eacute;part. On le compl&egrave;te ensuite &agrave; la main&nbsp;:</p>
+  <pre data-file="AGENTS.md (exemple)" data-lang="markdown"># Projet : Boutique (React + Vite)
+
+## Commandes
+- Démarrer : npm run dev
+- Tester : npm test
+- Lint : npm run lint
+
+## Conventions
+- JavaScript, pas de TypeScript.
+- Composants dans src/components/.
+- Pas de nouvelle dépendance sans justification.
+
+## À ne jamais faire
+- Modifier package-lock.json à la main.
+- Commit sur main sans passer par une branche.</pre>
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Place-le au bon endroit</div>
+    <p style="margin:0">Un <code class="inline">AGENTS.md</code> &agrave; la racine d&eacute;crit tout le projet. Tu peux aussi en
+    mettre dans un sous-dossier pour pr&eacute;ciser des r&egrave;gles locales. Plus il est pr&eacute;cis et court, mieux il est suivi&nbsp;:
+    des r&egrave;gles concr&egrave;tes valent mieux qu'un long roman.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Ouvre un de tes projets dans OpenCode et lance <code class="inline">/init</code>.</li>
+      <li>Relis l'<code class="inline">AGENTS.md</code> g&eacute;n&eacute;r&eacute;&nbsp;: corrige les erreurs, ajoute tes commandes r&eacute;elles.</li>
+      <li>Relance une t&acirc;che&nbsp;: l'agent doit suivre tes conventions sans que tu les r&eacute;p&egrave;tes.</li>
+      <li>R&eacute;&eacute;cris un prompt brouillon en suivant les 5&nbsp;&eacute;l&eacute;ments (contexte, objectif, contraintes, format, plan).</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Un bon prompt = <strong>contexte + objectif + contraintes + format + demande de plan</strong>.</li>
+      <li>Planifier avant d'agir &eacute;conomise du temps et des tokens.</li>
+      <li><code class="inline">AGENTS.md</code> porte le contexte du projet&nbsp;; <code class="inline">/init</code> le g&eacute;n&egrave;re.</li>
+      <li>Court et concret&nbsp;: des r&egrave;gles pr&eacute;cises sont mieux suivies.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 19 · MINI-PROJET DE A À Z                                        -->
+<!-- ================================================================ -->
+<section class="page" id="mini-projet" data-module="Module 6 &middot; Pratique &amp; m&eacute;thode"
+         data-num="19" data-title="Mini-projet : ton assistant de A &agrave; Z">
+  <span class="kicker">Module 6 &middot; Pratique &amp; m&eacute;thode</span>
+  <h1>Mini-projet : ton assistant de A &agrave; Z</h1>
+  <p class="lead">Place &agrave; la pratique. On construit, &eacute;tape par &eacute;tape, un assistant de projet complet&nbsp;: contexte,
+  agent de revue, skill, commande et serveur MCP. Chaque &eacute;tape r&eacute;utilise ce que tu as appris&nbsp;&mdash; rien de nouveau.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Assembler <strong>toutes</strong> les briques du cours dans un seul projet r&eacute;el et v&eacute;rifier que
+    l'ensemble fonctionne ensemble.</p>
+  </div>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Comment suivre ce mini-projet</div>
+    <p style="margin:0">Prends n'importe quel petit projet &agrave; toi (ou cr&eacute;e un dossier
+    <code class="inline">demo-assistant/</code> vide). Fais les 6&nbsp;&eacute;tapes dans l'ordre. &Agrave; la fin, tu auras une
+    configuration r&eacute;utilisable pour tous tes projets.</p>
+  </div>
+
+  <h2>Ce qu'on va construire</h2>
+  <div class="diagram">  demo-assistant/
+  ├── AGENTS.md                    (étape 1 : le contexte)
+  ├── .opencode/
+  │   ├── agents/
+  │   │   └── reviewer.md          (étape 2 : un agent de revue)
+  │   ├── skills/
+  │   │   └── conventions/SKILL.md (étape 3 : une skill)
+  │   └── commands/
+  │       └── verifier.md          (étape 4 : une commande)
+  └── opencode.json                (étape 5 : un serveur MCP)</div>
+
+  <h2>&Eacute;tape 1 &mdash; Le contexte du projet</h2>
+  <p>On commence par donner &agrave; l'agent le minimum vital&nbsp;: comment lancer et tester le projet, quelles sont les
+  conventions.</p>
+  <pre data-file="demo-assistant/AGENTS.md" data-lang="markdown"># Projet : démo assistant
+
+## Commandes
+- Lancer : npm run dev
+- Tester : npm test
+
+## Conventions
+- JavaScript uniquement.
+- Chaque fonction exportée a un commentaire d'une ligne.
+
+## Interdits
+- Pas de nouvelle dépendance sans validation.</pre>
+  <p><strong>V&eacute;rifie&nbsp;:</strong> lance OpenCode dans ce dossier et demande &laquo;&nbsp;quelles sont les conventions de ce
+  projet&nbsp;?&nbsp;&raquo;. L'agent doit r&eacute;pondre sans que tu les r&eacute;p&egrave;tes.</p>
+
+  <h2>&Eacute;tape 2 &mdash; Un agent de revue</h2>
+  <p>On cr&eacute;e un <strong>subagent</strong> qui relit le code sans jamais l'&eacute;diter. C'est le patron du moindre privil&egrave;ge&nbsp;:
+  il lit, il commente, il ne modifie rien.</p>
+  <pre data-file=".opencode/agents/reviewer.md" data-lang="markdown">---
+description: Relit le code selon les conventions du projet
+mode: subagent
+permissions:
+  - action: edit
+    resource: "*"
+    effect: deny
+---
+
+Tu es un relecteur exigeant.
+Tu t'appuies sur AGENTS.md.
+Tu signales&nbsp;: bugs, tests manquants, écarts aux conventions.
+Tu ne modifies jamais les fichiers : tu proposes.</pre>
+  <p><strong>V&eacute;rifie&nbsp;:</strong> demande &agrave; l'agent build d'utiliser ce subagent de revue sur un fichier.</p>
+
+  <h2>&Eacute;tape 3 &mdash; Une skill r&eacute;utilisable</h2>
+  <p>On range la m&eacute;thode de revue dans une skill, pour la r&eacute;utiliser dans n'importe quel projet.</p>
+  <pre data-file=".opencode/skills/conventions/SKILL.md" data-lang="markdown">---
+name: Conventions
+description: Vérifier le respect des conventions du projet
+---
+
+## Marche à suivre
+1. Lis AGENTS.md.
+2. Liste les écarts aux conventions, du plus grave au moins grave.
+3. Pour chaque écart, propose une correction sans l'appliquer.</pre>
+  <p><strong>V&eacute;rifie&nbsp;:</strong> la skill doit appara&icirc;tre quand le sujet est la relecture ou les conventions.</p>
+
+  <h2>&Eacute;tape 4 &mdash; Une commande</h2>
+  <p>On emballe le tout dans une commande unique, d&eacute;clench&eacute;e en une frappe.</p>
+  <pre data-file=".opencode/commands/verifier.md" data-lang="markdown">---
+description: Vérifier les fichiers modifiés
+agent: general
+---
+
+Vérifie $ARGUMENTS :
+1. Respecte-t-il les conventions d'AGENTS.md ?
+2. Y a-t-il des tests manquants ?
+Rends une liste courte, classée par gravité. Ne modifie rien.</pre>
+  <p><strong>V&eacute;rifie&nbsp;:</strong> dans OpenCode, tape <code class="inline">/verifier src/app.js</code>.</p>
+
+  <h2>&Eacute;tape 5 &mdash; Un serveur MCP</h2>
+  <p>On branche un outil externe pour que l'agent ait de la documentation toujours &agrave; jour.</p>
+  <pre data-file="terminal" data-lang="bash">opencode mcp add context7 --url https://mcp.context7.com/mcp
+opencode mcp list</pre>
+  <p><strong>V&eacute;rifie&nbsp;:</strong> <code class="inline">/mcps</code> montre le serveur <code class="inline">connected</code>, et
+  l'agent l'utilise quand tu demandes la doc d'une librairie.</p>
+
+  <h2>&Eacute;tape 6 &mdash; Le test final</h2>
+  <p>Tout est en place. Voici une mission compl&egrave;te qui utilise chaque brique&nbsp;:</p>
+  <pre data-file="dans OpenCode" data-lang="text">/plan Ajoute une page "Contact" à l'application.
+Format : d'abord un plan, ensuite une estimation
+des fichiers touchés. Ne code rien pour l'instant.</pre>
+  <p>Puis&nbsp;:</p>
+  <ol class="steps">
+    <li>Valide le plan, passe en <code class="inline">/build</code> et fais ex&eacute;cuter.</li>
+    <li>Lance <code class="inline">/verifier</code> sur les fichiers modifi&eacute;s.</li>
+    <li>Demande la doc de la librairie utilis&eacute;e (le serveur MCP doit r&eacute;pondre).</li>
+  </ol>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>R&eacute;alise les 6&nbsp;&eacute;tapes ci-dessus dans un projet.</li>
+      <li>Copie le dossier <code class="inline">.opencode/</code> obtenu dans un second projet et constate qu'il fonctionne tel quel.</li>
+      <li>Cr&eacute;e un commit Git pour versionner ta configuration d'assistant.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li><code class="inline">AGENTS.md</code> = contexte&nbsp;; l'agent le lit tout seul.</li>
+      <li>Le subagent de revue illustre le <strong>moindre privil&egrave;ge</strong> (lecture seule).</li>
+      <li>Skill = m&eacute;thode r&eacute;utilisable&nbsp;; commande = raccourci&nbsp;; MCP = outil externe.</li>
+      <li>Une config d'assistant se <strong>versionne</strong> et se partage avec l'&eacute;quipe.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- 20 · SYNTHÈSE, DÉPANNAGE, RESSOURCES                             -->
+<!-- ================================================================ -->
+<section class="page" id="synthese" data-module="Module 6 &middot; Pratique &amp; m&eacute;thode"
+         data-num="20" data-title="Synth&egrave;se, d&eacute;pannage &amp; ressources">
+  <span class="kicker">Module 6 &middot; Pratique &amp; m&eacute;thode</span>
+  <h1>Synth&egrave;se, d&eacute;pannage &amp; ressources</h1>
+  <p class="lead">F&eacute;licitations&nbsp;: tu as fait tout le parcours. R&eacute;capitulons l'essentiel, voyons comment r&eacute;soudre les
+  probl&egrave;mes courant, et o&ugrave; continuer en autonomie.</p>
+
+  <div class="box objectif">
+    <div class="box-title"><span class="ico">&#127919;</span>Objectif</div>
+    <p style="margin:0">Avoir une vue d'ensemble claire, un r&eacute;flexe de d&eacute;pannage, et les bonnes sources pour rester &agrave; jour.</p>
+  </div>
+
+  <h2>Le r&eacute;capitulatif du cours</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Chapitre</th><th>Id&eacute;e cl&eacute;</th></tr></thead>
+      <tbody>
+        <tr><td>01 Comprendre l'IA</td><td>Un mod&egrave;le pr&eacute;dit du texte&nbsp;; il n'est pas infaillible.</td></tr>
+        <tr><td>02 Vocabulaire</td><td>Mod&egrave;le, provider, agent, token, contexte.</td></tr>
+        <tr><td>03 Installer</td><td>Script, Homebrew, ou npm.</td></tr>
+        <tr><td>04 Premier lancement</td><td>Config, base de donn&eacute;es, interface.</td></tr>
+        <tr><td>05 Providers</td><td>Qui fournit les mod&egrave;les.</td></tr>
+        <tr><td>06 Mod&egrave;les gratuits</td><td>OpenRouter, Hugging Face, mod&egrave;les locaux.</td></tr>
+        <tr><td>07 Choisir un mod&egrave;le</td><td>Qualit&eacute; / co&ucirc;t / vitesse&nbsp;: la bonne grille.</td></tr>
+        <tr><td>08 Configurer</td><td>Le tableau <code class="inline">providers</code> et <code class="inline">models</code>.</td></tr>
+        <tr><td>09 Mod&egrave;les locaux</td><td>Ollama, LM Studio, vLLM.</td></tr>
+        <tr><td>10 R&eacute;duire les co&ucirc;ts</td><td>Moins de contexte, bon mod&egrave;le, cache.</td></tr>
+        <tr><td>11 Agents</td><td>R&ocirc;le + mod&egrave;le + outils + permissions.</td></tr>
+        <tr><td>12 Cr&eacute;er un agent</td><td>Un <code class="inline">.md</code> avec frontmatter.</td></tr>
+        <tr><td>13 Trouver des agents</td><td>Lire avant d'installer.</td></tr>
+        <tr><td>14 Skills</td><td>Consignes r&eacute;utilisables charg&eacute;es &agrave; la demande.</td></tr>
+        <tr><td>15 Plugins</td><td>Ajouter des outils et hooks.</td></tr>
+        <tr><td>16 Commandes</td><td>Un prompt r&eacute;utilisable en <code class="inline">/mot</code>.</td></tr>
+        <tr><td>17 MCP</td><td>Brancher des outils externes.</td></tr>
+        <tr><td>18 Prompter</td><td>Contexte + objectif + contraintes + plan.</td></tr>
+        <tr><td>19 Mini-projet</td><td>Tout assembler.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>D&eacute;pannage rapide</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sympt&ocirc;me</th><th>Piste</th></tr></thead>
+      <tbody>
+        <tr><td>OpenCode n'affiche rien</td><td><code class="inline">opencode --version</code>, puis <code class="inline">opencode service restart</code>.</td></tr>
+        <tr><td>Un mod&egrave;le ne r&eacute;pond pas</td><td>V&eacute;rifie la cl&eacute; du provider, son quota, et que le mod&egrave;le est bien d&eacute;clar&eacute;.</td></tr>
+        <tr><td>Erreur 429 (trop de requ&ecirc;tes)</td><td>Quota atteint&nbsp;: change de mod&egrave;le ou attends la r&eacute;initialisation.</td></tr>
+        <tr><td>Une skill n'appara&icirc;t pas</td><td>V&eacute;rifie l'ID (issu du chemin), la <code class="inline">description</code>, et les permissions.</td></tr>
+        <tr><td>Un serveur MCP reste d&eacute;connect&eacute;</td><td><code class="inline">opencode mcp list</code>, puis <code class="inline">/mcps</code> pour t'authentifier.</td></tr>
+        <tr><td>Un plugin ne charge pas</td><td>V&eacute;rifie le dossier de d&eacute;couverte et tente <code class="inline">opencode service restart</code>.</td></tr>
+        <tr><td>O&ugrave; sont mes donn&eacute;es&nbsp;?</td><td><code class="inline">opencode debug paths db</code> affiche les chemins.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Les commandes &agrave; retenir</h2>
+  <pre data-file="aide-m&eacute;moire" data-lang="bash">opencode --version              # version installée
+opencode service restart        # redémarrer le service
+opencode debug paths db         # chemins des données
+opencode mcp add / list         # gérer les serveurs MCP
+opencode plugin add / list      # gérer les plugins</pre>
+
+  <h2>Ressources fiables</h2>
+  <div class="grid two">
+    <div class="mini">
+      <h5>Documentation officielle OpenCode</h5>
+      <p>La source de v&eacute;rit&eacute; pour les commandes, la config et les nouveaut&eacute;s&nbsp;: <code class="inline">opencode.ai/docs</code>.</p>
+    </div>
+    <div class="mini">
+      <h5>Mod&egrave;les &amp; prix</h5>
+      <p>Compare les mod&egrave;les et leurs tarifs avant de choisir&nbsp;: <code class="inline">models.dev</code>.</p>
+    </div>
+    <div class="mini">
+      <h5>Mod&egrave;les gratuits</h5>
+      <p>OpenRouter (tier gratuit) et Hugging Face pour t'entra&icirc;ner sans payer.</p>
+    </div>
+    <div class="mini">
+      <h5>Standard MCP</h5>
+      <p>Comprendre le protocole&nbsp;: <code class="inline">modelcontextprotocol.io</code>.</p>
+    </div>
+  </div>
+
+  <div class="box tip">
+    <div class="box-title"><span class="ico">&#128161;</span>Comment rester &agrave; jour</div>
+    <p style="margin:0">L'IA &eacute;volue vite&nbsp;: une version change, un mod&egrave;le appara&icirc;t. Prends l'habitude de v&eacute;rifier la
+    <strong>documentation officielle</strong> avant d'appliquer un tutoriel ancien. M&eacute;fie-toi des chiffres et des noms de
+    mod&egrave;les colport&eacute;s&nbsp;: v&eacute;rifie &agrave; la source.</p>
+  </div>
+
+  <div class="box pratique">
+    <div class="box-title"><span class="ico">&#128295;</span>&Agrave; faire maintenant</div>
+    <ol class="steps" style="margin-bottom:0">
+      <li>Reprends ton mini-projet et ajoute une seconde skill (par exemple&nbsp;: &laquo;&nbsp;&eacute;crire un message de commit&nbsp;&raquo;).</li>
+      <li>Note dans un fichier tes 3&nbsp;mod&egrave;les pr&eacute;f&eacute;r&eacute;s et pourquoi (ta grille personnelle).</li>
+      <li>Partage ta configuration avec un coll&egrave;gue et am&eacute;liore-la gr&acirc;ce &agrave; ses retours.</li>
+    </ol>
+  </div>
+
+  <div class="box retenir">
+    <div class="box-title"><span class="ico">&#9989;</span>&Agrave; retenir</div>
+    <ul style="margin-bottom:0">
+      <li>Le trio gagnant&nbsp;: <strong>bon mod&egrave;le + bon contexte + bon prompt</strong>.</li>
+      <li>&Eacute;tends OpenCode <em>seulement</em> quand tu en as besoin (skills, plugins, MCP).</li>
+      <li>Moindre privil&egrave;ge partout&nbsp;: un agent = le minimum de droits.</li>
+      <li>V&eacute;rifie toujours la <strong>documentation officielle</strong> avant d'appliquer une astuce.</li>
+      <li>Tu sais maintenant installer, configurer et &eacute;tendre ton assistant de code.</li>
+    </ul>
+  </div>
+</section>
+
+      </div><!-- /#pages -->
+
+      <div class="pager is-hidden" id="pager"></div>
+    </main>
+  </div><!-- /.layout -->
+</div><!-- /.app -->
+
+<footer class="site-footer">
+  <div class="inner">
+    <p class="mark">Cours IA &amp; OpenCode &middot; l'art de comprendre la machine.</p>
+    <p>Parcours pratique &middot; 2026 &middot; 20 th&eacute;matiques, 6 modules</p>
+  </div>
+</footer>
+
+<button class="icon-btn to-top" id="toTop" aria-label="Remonter en haut">&#8593;</button>
+
+<script src="script.js"></script>
+</body>
+</html>
